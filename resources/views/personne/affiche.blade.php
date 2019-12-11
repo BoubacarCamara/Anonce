@@ -33,6 +33,8 @@
       <th scope="col">Telephne</th>
       <th scope="col">Email</th>
       <th scope="col">status</th>
+      <th scope="col">Modifier</th>
+      <th scope="col">Supprimer</th>
     </tr>
   </thead>
   <tbody>
@@ -47,11 +49,14 @@
                <td>{{$personne->status}}</td>
               
         <td><a href="{{route('editer_personne',['id'=>$personne->id])}}" class="btn btn-primary" name="edit">editer</a></td>
+       <td> <form action="personne/{{$personne->id}}" method="post">
+               @csrf
+               @method('delete')
+               <input type="submit" class="btn btn-danger" name="delete" value="Supprimer">
+           </form></td>
+
     </tr>         
     @endforeach
   </tbody>
 </table>
-
-
-
 </html>

@@ -10,7 +10,11 @@ class PersonneController extends Controller
         $perso = \App\Personne::orderBy('created_at', 'DESC')->get();
         return view('personne.affiche', compact('perso'));
      }
-      
+   public function index(){
+      $perso = \App\Personne::orderBy('created_at', 'DESC')->get();
+      return view('personne.affiche', compact('perso'));
+   }
+    
     
 public function create()
 {
@@ -57,6 +61,15 @@ public function update(Request $request, $id){
        $perso->save();
    }
    return redirect('/');
+}
+
+public function destroy($id)
+{
+   $perso = \App\Personne::find($id);
+   if($perso)
+       $perso->delete();
+   return redirect()->back();
+
 }
 
 

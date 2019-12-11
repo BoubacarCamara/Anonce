@@ -4,12 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-
-    <title> ajouter_propriete</title>
+    <title>modifier</title>
 </head>
 <body>
-    <h1>ajout de propriete</h1>
 <div class="container">
 @if(session('success'))
    <div class="alert alert-success">{{session('success')}}</div>
@@ -20,11 +17,8 @@
        <div class="alert alert-danger">{{$error}}</div>
    @endforeach
 @endif
-
-       <div class="container">
-           <form action="{{route('ajouter_propriete')}}" method="post" enctype="multipart/form-data">
-               @csrf
-               <div>
+<form action="{{route('update_propriete',['id'=>$proprietes->id])}}" method="post" enctype="multipart/form-data">
+<div>
                    <input type="text" name="localisation" class="form-control" placeholder="localite" >
                </div>
              
@@ -61,11 +55,14 @@
                     @endforeach
                 </select>
                 </div>
+<div class="row">
+   <div class="col-6 text-right"><img src="{{asset($product->images)}}" alt="{{$product->name}}" width="100"></div><div class="col-6"><h3>Chargez une autre image pour remplacer celle-ci</h3></div>
+</div>
+<div>
+   <input type="file" name="image" class="form-control">
+</div>
+<button class="btn btn-primary">Enregistrer</button>
 
-                <div><input type="file" name="image" class="form-control"></div>
-               <div>
-                   <button class="btn btn-primary">Enregistrer</button>
-               </div>
-           </form>
+</form>
 </body>
 </html>

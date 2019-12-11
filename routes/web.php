@@ -22,11 +22,12 @@ Route::get("/","HomeController@index");
 Route::get("accueil","accueilController@accueil"); 
 Route::post("accueil","accueilController@accueil");
 Route::get("personne","personneController@personne"); 
-
+//demande
 Route::get('/Demande','DemandeController@index');
 Route::get('Demande/create','DemandeController@create');
 Route::post('Demande/create','DemandeController@store')->name("ajouter_demande");
 
+//personne
 
 Route::get('/personne','PersonneController@affiche');
 Route::get('personne/create','PersonneController@create');
@@ -37,7 +38,14 @@ Route::get('personne/{id}/edit','PersonneController@edit')->name("editer_personn
 
 Route::patch('personne/{id}/edit', 'PersonneController@update')->name('update_personne');
 
+Route::delete('personne/{id}', 'PersonneController@destroy');
+Route::resource('personne', 'PersonneController');
 
+//propriete
+Route::get('propriete','ProprieteController@affiche');
+Route::get('propriete/create','ProprieteController@create');
+Route::post('propriete/create','ProprieteController@store')->name("ajouter_propriete");
+Route::patch('propriete/{id}/edit', 'ProprieteController@edit')->name('update_propriete');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

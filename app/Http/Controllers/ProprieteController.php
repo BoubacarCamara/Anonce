@@ -6,6 +6,7 @@ use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Str;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class ProprieteController extends Controller
 {
@@ -13,6 +14,10 @@ class ProprieteController extends Controller
         $perso = \App\Proprietes::orderBy('created_at', 'DESC')->get();
         return view('propriete.affiche', compact('perso'));
      }
+     public function index(){
+      $perso = \App\Proprietes::orderBy('created_at', 'DESC')->get();
+      return view('propriete.affiche', compact('perso'));
+   }
       
     
 public function create()
@@ -55,12 +60,10 @@ public function create()
    $perso->nombre_chambre_min = $request->input('nombre_chambre_min');
    $perso->nombre_chambre_max = $request->input('nombre_chambre_max');
    $perso->salle_de_bain = $request->input('salle_de_bain');
-   $perso->salle_de_bain = $request->input('salle_de_bain');
+   $perso->superficie = $request->input('superficie');
    $perso->description = $request->input('description');
    $perso->type_anonce = $request->input('type_anonce');
    $perso->Type_de_proprietes_id = $request->input('Type_de_proprietes_id');
-
-
    $perso->save();
    return redirect('/')->with(['success' => "P enregistré"]);
    
@@ -84,14 +87,14 @@ public function update(Request $request, $id){
       if($request->has('image')){
           //On enregistre l'image dans une variable
           $image = $request->file('image');
-          if(file_exists(public_path().$proprietes->images))//On verifie si le fichier existe
-              Storage::delete(asset($proprietes->images));//On le supprime alors
+          if(file_exists(public_path().$perso->image))//On verifie si le fichier existe
+              Storage::delete(asset($perso->image));//On le supprime alors
           //Nous enregistrerons nos fichiers dans /uploads/images dans public
           $folder = '/uploads/images/';
           $image_name = Str::slug($request->input('name')).'_'.time();
-          $produproprietes->images = $folder.$image_name.'.'.$image->getClientOriginalExtension();
+          $perso->image = $folder.$image_name.'.'.$image->getClientOriginalExtension();
           //Maintenant nous pouvons enregistrer l'image dans le dossier en utilisant la méthode uploadImage();
-          $this->uploadImage($image, $folder, 'public', $image_name);
+          $this->uploadImage($image, $folder, 'public', $image);
     
     $perso->localisation = $request->input('localisation');
    $perso->prix_min = $request->input('prix_min');
@@ -99,15 +102,24 @@ public function update(Request $request, $id){
    $perso->nombre_chambre_min = $request->input('nombre_chambre_min');
    $perso->nombre_chambre_max = $request->input('nombre_chambre_max');
    $perso->salle_de_bain = $request->input('salle_de_bain');
-   $perso->salle_de_bain = $request->input('salle_de_bain');
+   $perso->superficie = $request->input('superficie');
    $perso->description = $request->input('description');
    $perso->type_anonce = $request->input('type_anonce');
    $perso->Type_de_proprietes_id = $request->input('Type_de_proprietes_id');
    $perso->save();
 
 }
-   return redirect()->back();
+   return redirect('/propriete');
 }
+}
+
+public function destroy($id)
+{
+   $perso = \App\Proprietes::find($id);
+   if($perso)
+       $perso->delete();
+   return redirect()->back();
+
 }
 }
 

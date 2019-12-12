@@ -21,8 +21,6 @@
            </tr>
        @endforeach
    </table> -->
-
-  
    <table class="table">
   <thead class="thead-dark">
   <tr>
@@ -54,7 +52,6 @@
                @method('delete')
                <input type="submit" class="btn btn-danger" name="delete" value="Supprimer">
            </form></td>
-
     </tr>         
     @endforeach
   </tbody>

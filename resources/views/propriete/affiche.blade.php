@@ -41,18 +41,14 @@
                <td>{{$proprietes->description}}</td>
                <td>{{$proprietes->Type_de_proprietes_id->nom ?? ''}}</td>
                <td><img src="{{$proprietes->image ? asset($proprietes->image) : asset('uploads/images/default.png')}}" alt="{{$proprietes->name}}" width="50"></td>
-               <td><a href="{{route('update_propriete',['id'=>$proprietes->id])}}" class="btn btn-primary" name="edit">editer</a></td>
+               <td><a href="{{route('edit_propriete',['id'=>$proprietes->id])}}" class="btn btn-primary" name="edit">editer</a></td>
        <td> <form action="proprietes/{{$proprietes->id}}" method="post">
                @csrf
                @method('delete')
                <input type="submit" class="btn btn-danger" name="delete" value="Supprimer">
            </form></td>
-
-               <!-- <div class="row">
-   <div class="col-6 text-right"><img src="{{asset($proprietes->images)}}" alt="{{$proprietes->name}}" width="100"></div><div class="col-6"><h3>Chargez une autre image pour remplacer celle-ci</h3></div> -->
-</div>
-
-    </tr>         
+         </div>
+       </tr>         
     @endforeach
   </tbody>
 </table>

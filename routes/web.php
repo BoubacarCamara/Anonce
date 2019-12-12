@@ -44,8 +44,12 @@ Route::resource('personne', 'PersonneController');
 //propriete
 Route::get('propriete','ProprieteController@affiche');
 Route::get('propriete/create','ProprieteController@create');
-Route::post('propriete/create','ProprieteController@store')->name("ajouter_propriete");
-Route::patch('propriete/{id}/edit', 'ProprieteController@edit')->name('update_propriete');
-Auth::routes();
 
+Route::post('propriete/create','ProprieteController@store')->name("ajouter_propriete");
+
+Route::GET('propriete/{id}/edit', 'ProprieteController@edit')->name('edit_propriete');
+Route::patch('propriete/{id}/edit', 'ProprieteController@update')->name('update_propriete');
+Route::delete('propriete/{id}', 'ProprieteController@destroy');
+Route::resource('propriete', 'ProprieteController');
+Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');

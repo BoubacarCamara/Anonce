@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Proprietes extends Model
 {
+    protected $guarded = [];
     public function Demande(){
         return $this->hasMany('App\Demande');
     }

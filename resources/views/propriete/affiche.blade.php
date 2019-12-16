@@ -13,14 +13,14 @@
   <tr>
     <th scope="col">id</th>
       <th scope="col">localisation</th>
-      <th scope="col">Prix min</th>
-      <th scope="col">prix max</th>
-      <th scope="col">nombre de chambre min</th>
-      <th scope="col">nombre de chambre max</th>
-      <th scope="col">salle de bain</th>
+      <th scope="col">Prixmin</th>
+      <th scope="col">prixmax</th>
+      <th scope="col">chambremin</th>
+      <th scope="col">chambremax</th>
+      <th scope="col">salle_bain</th>
       <th scope="col">superficie</th>
-      <th scope="col">type type_anonce</th>
-      <th scope="col">type propriete</th>
+      <th scope="col">type_anonce</th>
+      <th scope="col">type_propriete</th>
       <th scope="col">photo</th>
       <th scope="col">Modifier</th>
       <th scope="col">Supprimer</th>
@@ -42,7 +42,7 @@
                <td>{{$proprietes->Type_de_proprietes_id->nom ?? ''}}</td>
                <td><img src="{{$proprietes->image ? asset($proprietes->image) : asset('uploads/images/default.png')}}" alt="{{$proprietes->name}}" width="50"></td>
                <td><a href="{{route('edit_propriete',['id'=>$proprietes->id])}}" class="btn btn-primary" name="edit">editer</a></td>
-       <td> <form action="proprietes/{{$proprietes->id}}" method="post">
+       <td> <form action="propriete/{{$proprietes->id}}" method="post">
                @csrf
                @method('delete')
                <input type="submit" class="btn btn-danger" name="delete" value="Supprimer">
@@ -52,4 +52,6 @@
     @endforeach
   </tbody>
 </table>
+       </th>
+   </tr>
 </html>

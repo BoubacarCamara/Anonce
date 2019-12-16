@@ -44,27 +44,27 @@ public function create()
 
       ]);
 
-   $perso = new \App\Proprietes();
+   $propriete = new \App\Proprietes();
    if($request->has('image')){
     $image = $request->file('image');
     //dd($image);
     $image_name = \Illuminate\Support\Str::slug($request->input('name')).'_'.time();
     $folder = '/uploads/images/';
-    $perso->image = $folder.$image_name.'.'.$image->getClientOriginalExtension();
+    $propriete->image = $folder.$image_name.'.'.$image->getClientOriginalExtension();
     $this->uploadImage($image, $folder, 'public', $image_name);
 }
    //dd($request->input('Type_de_proprietes_id'));
-   $perso->localisation = $request->input('localisation');
-   $perso->prix_min = $request->input('prix_min');
-   $perso->prix_max = $request->input('prix_max');
-   $perso->nombre_chambre_min = $request->input('nombre_chambre_min');
-   $perso->nombre_chambre_max = $request->input('nombre_chambre_max');
-   $perso->salle_de_bain = $request->input('salle_de_bain');
-   $perso->superficie = $request->input('superficie');
-   $perso->description = $request->input('description');
-   $perso->type_anonce = $request->input('type_anonce');
-   $perso->Type_de_proprietes_id = $request->input('Type_de_proprietes_id');
-   $perso->save();
+   $propriete->localisation = $request->input('localisation');
+   $propriete->prix_min = $request->input('prix_min');
+   $propriete->prix_max = $request->input('prix_max');
+   $propriete->nombre_chambre_min = $request->input('nombre_chambre_min');
+   $propriete->nombre_chambre_max = $request->input('nombre_chambre_max');
+   $propriete->salle_de_bain = $request->input('salle_de_bain');
+   $propriete->superficie = $request->input('superficie');
+   $propriete->description = $request->input('description');
+   $propriete->type_anonce = $request->input('type_anonce');
+   $propriete->Type_de_proprietes_id = $request->input('Type_de_proprietes_id');
+   $propriete->save();
    return redirect('/')->with(['success' => "P enregistré"]);
    
 }
@@ -78,50 +78,68 @@ public function uploadImage(UploadedFile $uploadedFile, $folder = null, $disk = 
 
 public function edit($id)
 {
-   $perso = \App\Proprietes::find($id);//on recupere la propriete
-   return view('propriete.edit', compact('perso'));
+    {
+        $propriete = \App\Proprietes::find($id);
+        $Type_de_propriete = \App\Type_de_propriete::pluck('nom','id');
+        return view('propriete.edit', compact('propriete','Type_de_propriete'));
+     }
+     
+
+//    $Type_de_propriete = \App\Type_de_propriete::pluck('nom','id');//on recupere la propriete
+//    $proprietes = \App\Proprietes::find($id);
+//    return view('propriete.edit', compact('Type_de_propriete','proprietes','perso'));
 }
+
 public function update(Request $request, $id){
-   $perso = \App\Proprietes::find($id);
-   if($perso){
-      if($request->has('image')){
-          //On enregistre l'image dans une variable
-          $image = $request->file('image');
-          if(file_exists(public_path().$perso->image))//On verifie si le fichier existe
-              Storage::delete(asset($perso->image));//On le supprime alors
-          //Nous enregistrerons nos fichiers dans /uploads/images dans public
-          $folder = '/uploads/images/';
-          $image_name = Str::slug($request->input('name')).'_'.time();
-          $perso->image = $folder.$image_name.'.'.$image->getClientOriginalExtension();
-          //Maintenant nous pouvons enregistrer l'image dans le dossier en utilisant la méthode uploadImage();
-          $this->uploadImage($image, $folder, 'public', $image);
+    $propriete = \App\Proprietes::find($id);
+    // $propriete  = \App\Proprietes::find($id);
+    if($propriete){
+        $save_image = null;
+        if($request->has('image')){
+            //On enregistre l'image dans une variable
+            $image = $request->file('image');
+            if(file_exists(public_path().$propriete->image)){//On verifie si le fichier existe
+                Storage::delete(asset($propriete->image));//On le supprime alors
+            }
+            //Nous enregistrerons nos fichiers dans /uploads/images dans public
+            $folder = '/uploads/images/';
+            $image_name = Str::slug($request->input('name')).'_'.time();
+            $save_image = $folder.$image_name.'.'.$image->getClientOriginalExtension();
+            //Maintenant nous pouvons enregistrer l'image dans le dossier en utilisant la méthode uploadImage();
+            $this->uploadImage($image, $folder, 'public', $image_name);
+        }
+        $propriete->update([
+            "localisation" => $request->input('localisation'),
+            "prix_min" => $request->input('prix_min'),
+            "prix_max" => $request->input('prix_max'),
+            "image" => $save_image,
+            "nombre_chambre_min" => $request->input('nombre_chambre_min'),
+            "nombre_chambre_max" => $request->input('nombre_chambre_max'),
+            "salle_de_bain" => $request->input('salle_de_bain'),
+            "superficie" => $request->input('superficie'),
+            "description" => $request->input('description'),
+            "type_anonce" => $request->input('type_anonce'),
+            "Type_de_proprietes_id" => $request->input('Type_de_proprietes_id'),
+        ]);
+    }
+    return redirect('/propriete');
+}
     
-    $perso->localisation = $request->input('localisation');
-   $perso->prix_min = $request->input('prix_min');
-   $perso->prix_max = $request->input('prix_max');
-   $perso->nombre_chambre_min = $request->input('nombre_chambre_min');
-   $perso->nombre_chambre_max = $request->input('nombre_chambre_max');
-   $perso->salle_de_bain = $request->input('salle_de_bain');
-   $perso->superficie = $request->input('superficie');
-   $perso->description = $request->input('description');
-   $perso->type_anonce = $request->input('type_anonce');
-   $perso->Type_de_proprietes_id = $request->input('Type_de_proprietes_id');
-   $perso->save();
-
-}
-   return redirect('/propriete');
-}
-}
-
 public function destroy($id)
 {
-   $perso = \App\Proprietes::find($id);
-   if($perso)
-       $perso->delete();
-   return redirect()->back();
+   $propriete = \App\Proprietes::find($id);
+   if($propriete)
+       $propriete->delete();
+   return redirect('/propriete');
 
 }
-}
+
+}//fin de la classe
+
+
+
+
+
 
 
 

@@ -51,5 +51,15 @@ Route::GET('propriete/{id}/edit', 'ProprieteController@edit')->name('edit_propri
 Route::patch('propriete/{id}/edit', 'ProprieteController@update')->name('update_propriete');
 Route::delete('propriete/{id}', 'ProprieteController@destroy');
 Route::resource('propriete', 'ProprieteController');
+//alerte
+Route::get('alerte','alerteController@affiche');
+Route::get('alerte/create','alerteController@create');
+
+Route::post('alerte/create','alerteController@store')->name("ajouter_alert");
+
+Route::GET('alerte/{id}/edit', 'alerteController@edit')->name('edit_alert');
+Route::patch('alerte/{id}/edit', 'alerteController@update')->name('update_alert');
+Route::delete('alerte/{id}', 'alerteController@destroy');
+Route::resource('alerte', 'alerteController');
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');

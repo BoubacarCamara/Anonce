@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateAlertesTable extends Migration
+class AjoutDateToAlertes extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,8 @@ class CreateAlertesTable extends Migration
      */
     public function up()
     {
-        Schema::create('alertes', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->string('date');
-            $table->unsignedInteger('personnes_id');
-            $table->timestamps();
+        Schema::table('alertes', function (Blueprint $table) {
+            $table->dateTime('date')->default(date('Y-m-d H:i:s'))->nullable()->change();
         });
     }
 
@@ -28,6 +25,8 @@ class CreateAlertesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('alertes');
+        Schema::table('alertes', function (Blueprint $table) {
+            $table->string('date')->nullable()->change();
+        });
     }
 }

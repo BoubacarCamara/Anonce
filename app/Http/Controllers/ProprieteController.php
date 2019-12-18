@@ -84,10 +84,6 @@ public function edit($id)
         return view('propriete.edit', compact('propriete','Type_de_propriete'));
      }
      
-
-//    $Type_de_propriete = \App\Type_de_propriete::pluck('nom','id');//on recupere la propriete
-//    $proprietes = \App\Proprietes::find($id);
-//    return view('propriete.edit', compact('Type_de_propriete','proprietes','perso'));
 }
 
 public function update(Request $request, $id){

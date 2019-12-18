@@ -20,7 +20,6 @@
        <div class="alert alert-danger">{{$error}}</div>
    @endforeach
 @endif
-
        <div class="container">
            <form action="{{route('ajouter_personne')}}" method="post">
                @csrf

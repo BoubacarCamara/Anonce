@@ -61,5 +61,20 @@ Route::GET('alerte/{id}/edit', 'alerteController@edit')->name('edit_alert');
 Route::patch('alerte/{id}/edit', 'alerteController@update')->name('update_alert');
 Route::delete('alerte/{id}', 'alerteController@destroy');
 Route::resource('alerte', 'alerteController');
+
+
+//type_propriete
+
+Route::get('/type_propriete','Type_proprieteController@affiche');
+Route::get('type_propriete/create','Type_proprieteController@create');
+Route::post('type_propriete/create','Type_proprieteController@store')->name("ajouter_type");
+
+
+Route::get('type_propriete/{id}/edit','Type_proprieteController@edit')->name("editer_type");
+
+Route::patch('type_propriete/{id}/edit', 'Type_proprieteController@update')->name('update_type');
+
+Route::delete('type_propriete/{id}', 'Type_proprieteController@destroy');
+Route::resource('type_propriete', 'Type_proprieteController');
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');

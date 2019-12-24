@@ -6,14 +6,15 @@ use Illuminate\Database\Eloquent\Model;
 
 class Proprietes extends Model
 {
+    protected $guarded = [];
     public function Demande(){
-        return $this->belongsTo('App\Demande');
+        return $this->hasMany('App\Demande');
     }
 
-    public function Alertes(){
-        return $this->belongsTo('App\Alertes');
-    }
+    // public function Alertes(){
+    //     return $this->('App\Alertes');
+    // }
     public function Type_de_proprietes(){
-        return $this->hasMany("App\Type_de_proprietes");
+        return $this->belongsTo("App\Type_de_propriete");
     }
 }

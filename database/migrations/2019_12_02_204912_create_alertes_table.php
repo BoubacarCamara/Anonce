@@ -16,7 +16,6 @@ class CreateAlertesTable extends Migration
         Schema::create('alertes', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('date');
-            $table->unsignedInteger('proprietes_id');
             $table->unsignedInteger('personnes_id');
             $table->timestamps();
         });

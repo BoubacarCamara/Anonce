@@ -7,9 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 class Demande extends Model
 {
     public function Personnes(){
-        return $this->hasMany("App\Personnes");
+        return $this->belongsTo("App\Personnes");
     }
     public function Proprietes(){
-        return $this->hasMany("App\Proprietes");
+        return $this->belongsTo("App\Proprietes");
     }
 }

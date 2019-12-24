@@ -20,7 +20,6 @@
        <div class="alert alert-danger">{{$error}}</div>
    @endforeach
 @endif
-
        <div class="container">
            <form action="{{route('ajouter_personne')}}" method="post">
                @csrf
@@ -41,10 +40,15 @@
                <div>
                    <input type="text" name="email" class="form-control" placeholder="email">
                </div>
-               <div>
-                   <input type="text" name="status" class="form-control" placeholder="status">
+               <div> type de propriete
+                <select name="Type_de_proprietes_id" id="Type_de_proprietes_id" class="form-control" >
+                   
+                        <option value="">demandeur</option>
+                        <option value="">publieur</option>
+                        <div>
+                   <button class="btn btn-primary">Enregistrer</button>
                </div>
-               
+               </select>
                <div>
                    <button class="btn btn-primary">Enregistrer</button>
                </div>

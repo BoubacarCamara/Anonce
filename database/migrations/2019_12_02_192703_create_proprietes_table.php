@@ -25,6 +25,7 @@ class CreateProprietesTable extends Migration
             $table->string('superficie');
             $table->string('type_anonce');
             $table->string('description');
+            $table->unsignedInteger('users_id');
             $table->unsignedInteger('Type_de_proprietes_id');
             $table->timestamps();
         });
@@ -38,5 +39,8 @@ class CreateProprietesTable extends Migration
     public function down()
     {
         Schema::dropIfExists('proprietes');
+    
+       
+     
     }
 }

@@ -13,7 +13,7 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        //$this->middleware('auth'); (commentaire pour desactiver lauthentifucatio auto)
+        //$this->middleware('auth');
     }
 
     /**
@@ -23,7 +23,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $propriete=\App\Proprietes::All();
+        $propriete = \App\Proprietes::all()->take(7);//paginate(6);
         return view('index', compact('propriete'));
+        
     }
 }

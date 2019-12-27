@@ -42,6 +42,8 @@ Route::delete('personne/{id}', 'PersonneController@destroy');
 Route::resource('personne', 'PersonneController');
 
 //propriete
+Route::get("/propriete/{id}/show", 'ProprieteController@show');
+
 Route::get('propriete','ProprieteController@affiche');
 Route::get('propriete/create','ProprieteController@create');
 
@@ -76,5 +78,9 @@ Route::patch('type_propriete/{id}/edit', 'Type_proprieteController@update')->nam
 
 Route::delete('type_propriete/{id}', 'Type_proprieteController@destroy');
 Route::resource('type_propriete', 'Type_proprieteController');
+Route::get("/propriete/{id}/show", 'ProprieteController@show');
+Route::get("/propriete/{slug}/show", 'PropriesteController@show');
+// Auth::routes();
+// Route::get('/home', 'HomeController@index')->name('home');
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');

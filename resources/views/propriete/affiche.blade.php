@@ -39,6 +39,7 @@
                <td>{{$proprietes->superficie}}</td>
                <td>{{$proprietes->type_anonce}}</td>
                <td>{{$proprietes->description}}</td>
+               <!-- <td>{{$proprietes->Users_id->email ?? ''}}</td> -->
                <td>{{$proprietes->Type_de_proprietes_id->nom ?? ''}}</td>
                <td><img src="{{$proprietes->image ? asset($proprietes->image) : asset('uploads/images/default.png')}}" alt="{{$proprietes->name}}" width="50"></td>
                <td><a href="{{route('edit_propriete',['id'=>$proprietes->id])}}" class="btn btn-primary" name="edit">editer</a></td>

@@ -25,8 +25,9 @@ class ProprieteController extends Controller
 public function create()
 {
     $Type_de_propriete = \App\Type_de_propriete::pluck('nom','id');
+    $user = \App\User::pluck('email','id');
 
-   return view('propriete.create',compact('Type_de_propriete'));
+   return view('propriete.create',compact('Type_de_propriete','user'));
 }
     public function store(Request $request)
 {
@@ -42,6 +43,8 @@ public function create()
       'type_anonce'=>'max:20',
       'description'=>'max:20000',
       'Type_de_proprietes_id'=>'max:2000',
+      'users_id'=>'max:50',
+
       "image" => 'nullable | image | mimes:jpeg,png,jpg,gif | max: 2048'
 
       ]);
@@ -66,8 +69,9 @@ public function create()
    $propriete->description = $request->input('description');
    $propriete->type_anonce = $request->input('type_anonce');
    $propriete->Type_de_proprietes_id = $request->input('Type_de_proprietes_id');
+   $propriete->users_id= $request->input('users_id');
    $propriete->save();
-   return redirect('/')->with(['success' => "P enregistré"]);
+   return redirect('propriete')->with(['success' => "Propriete enregistré"]);
    
 }
 public function uploadImage(UploadedFile $uploadedFile, $folder = null, $disk = 'public', $filename = null){
@@ -82,8 +86,9 @@ public function edit($id)
 {
     {
         $propriete = \App\Proprietes::find($id);
+        $user = \App\User::pluck('id');
         $Type_de_propriete = \App\Type_de_propriete::pluck('nom','id');
-        return view('propriete.edit', compact('propriete','Type_de_propriete'));
+        return view('propriete.edit', compact('propriete','Type_de_propriete','user'));
      }
      
 }
@@ -117,6 +122,7 @@ public function update(Request $request, $id){
             "superficie" => $request->input('superficie'),
             "description" => $request->input('description'),
             "type_anonce" => $request->input('type_anonce'),
+            "users_id" => $request->input('users_id'),
             "Type_de_proprietes_id" => $request->input('Type_de_proprietes_id'),
         ]);
     }
@@ -131,6 +137,12 @@ public function destroy($id)
    return redirect('/propriete');
 
 }
+public function show($slug){
+    $propriete = Proprietes::where('slug',$slug)->first();
+    return view("propriete.show", compact('propriete'));
+ }
+ 
+ 
 
 }//fin de la classe
 

@@ -47,8 +47,16 @@
                <div>
                    <input type="text" name="superficie" class="form-control" placeholder="superficie">
                </div>
+               <input type="hidden" value="1" name="users_id">
                <div>
-                   <input type="text" name="type_anonce" class="form-control" placeholder="type d'anonce">
+               </div>
+               <div>
+               <select name="type_anonce" id="type_anonce" class="form-control" >
+                    <option value="">type anonce</option>
+                        <option name="A_vendre">A vendre</option>
+                        <option name="A_louer">A louer</option>
+                </select>
+                   <!-- <input type="text" name="type_anonce" class="form-control" placeholder="type d'anonce"> -->
                </div>
                <div>
                    <input type="text" name="description" class="form-control" placeholder="description">

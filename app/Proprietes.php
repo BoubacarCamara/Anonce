@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\support\Str;
 
 class Proprietes extends Model
 {
@@ -10,15 +11,24 @@ class Proprietes extends Model
     public function Type_de_proprietes(){
         return $this->belongsTo("App\Type_de_propriete");
     }
-    public function User(){
+    public function users(){
         return $this->belongsTo("App\User");
     }
 
-    public static function boot(){
+    public function slugGenerator($slug){
+        $i = 0;
+        while(!Proprietes::select('slug')->where('slug','like',$slug.'%')->get()->isEmpty()){
+            ++$i;
+            $slug = Str::slug($slug, '_').$i;
+        }
+        return $slug;
+     }
+     public static function boot(){
         parent::boot();
         static::saving(function($model){
-            $model->slug = \Illuminate\Support\Str::slug($model->name);
+        $model->slug = $model->slugGenerator(Str::slug($model->name));
         });
      }
+     
      
 }

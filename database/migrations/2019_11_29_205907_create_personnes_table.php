@@ -9,28 +9,31 @@ class CreatePersonnesTable extends Migration
     /**
      * Run the migrations.
      *
-     * @return void
-     */
-    public function up()
-    {
-        Schema::create('personnes', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->string('nom');
-            $table->string('prenom');
-            $table->string('adress')->nullable(true);
-            $table->string('telephone');
-            $table->string('email');
-            $table->timestamps();
-        });
-    }
+    //  * @return void
+    //  */
+    // public function up()
+    // {
+    //     Schema::create('personnes', function (Blueprint $table) {
+    //         $table->string('localisation');
+    //         $table->string('image');
+    //         $table->integer('prix_min');
+    //         $table->integer('prix_max');
+    //         $table->string('superficie');
+    //         $table->string('type_anonce');
+    //         $table->string('description');
+    //         $table->unsignedInteger('users_id');
+    //         $table->unsignedInteger('Type_de_proprietes_id');
+    //         $table->timestamps();
+    //     });
+    // }
 
     /**
      * Reverse the migrations.
-     *
-     * @return void
-     */
-    public function down()
-    {
-        Schema::dropIfExists('personnes');
-    }
-}
+ *
+      * @return void
+      */
+//     public function down()
+//     {
+//         Schema::dropIfExists('personnes');
+//     }
+// }

@@ -102,6 +102,7 @@
         </div>
     </div>
   </div>
+ 
   <div class="col-lg-4 col-sm-6 portfolio-item">
     <div class="card h-100">
     <a href="#"><img class="card-img-top" src="{{$proprietes->image ?? asset('uploads/images/default.png')}}" height="250" width="250" alt=""></a>      <div class="card-body">
@@ -153,6 +154,7 @@
     </div>
   </div>
 </div>
+@endforeach
 <!-- /.row -->
 
 <!-- Features Section -->
@@ -185,6 +187,7 @@
   <div class="col-md-4">
     <a class="btn btn-lg btn-success btn-block" href="#">Appellez nous</a>
   </div>
+  
 </div>
 
 </div>
@@ -193,5 +196,5 @@
   <!-- /.container -->
 
   <!-- Footer -->
-  @endforeach
+  
 @endsection

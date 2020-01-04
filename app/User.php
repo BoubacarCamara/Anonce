@@ -1,12 +1,12 @@
 <?php
 
 namespace App;
-
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
-class User extends Authenticatable
+
+class User extends Authenticatable implements MustVerifyEmail
 {
 
     use Notifiable;
@@ -40,4 +40,15 @@ class User extends Authenticatable
     public function Proprietes(){
         return $this->hasMany('App\Proprietes');
     }
+
+    /**Cette méthode va determiner si le user connecté a un  admin*/
+    public function isAdmin(){
+    return strtolower(@$this->status) === 'admin'? true : false;
+   }
+   /**Cett méthode va determiner si le user connecté a un statut agen*/
+public function isModerator(){
+    return strtolower(@$this->status) === 'agent'? true : false;
+ }
+ 
+ 
 }

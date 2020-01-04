@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Proprietes;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -23,8 +23,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $propriete = \App\Proprietes::all()->take(7);//paginate(6);
-        return view('index', compact('propriete'));
-        
+        $propriete = Proprietes::all();
+        return view('home',compact('propriete','perso'));
     }
+
+   
 }

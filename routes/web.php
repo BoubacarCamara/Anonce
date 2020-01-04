@@ -17,7 +17,7 @@
 // });
 
 
-Route::get("/","HomeController@index");
+Route::get("home","HomeController@index");
 
 Route::get("accueil","accueilController@accueil"); 
 Route::post("accueil","accueilController@accueil");
@@ -28,18 +28,18 @@ Route::get('Demande/create','DemandeController@create');
 Route::post('Demande/create','DemandeController@store')->name("ajouter_demande");
 
 //personne
+// Route::get("/personne/{id}/show", 'PersonneController@show');
+// Route::get('/personne','PersonneController@affiche');
+// Route::get('personne/create','PersonneController@create');
+// Route::post('personne/create','PersonneController@store')->name("ajouter_propriete");
 
-Route::get('/personne','PersonneController@affiche');
-Route::get('personne/create','PersonneController@create');
-Route::post('personne/create','PersonneController@store')->name("ajouter_personne");
 
+// Route::get('personne/{id}/edit','PersonneController@edit')->name("editer_personne");
 
-Route::get('personne/{id}/edit','PersonneController@edit')->name("editer_personne");
+// Route::patch('personne/{id}/edit', 'PersonneController@update')->name('update_personne');
 
-Route::patch('personne/{id}/edit', 'PersonneController@update')->name('update_personne');
-
-Route::delete('personne/{id}', 'PersonneController@destroy');
-Route::resource('personne', 'PersonneController');
+// Route::delete('personne/{id}', 'PersonneController@destroy');
+// Route::resource('personne', 'PersonneController');
 
 //propriete
 Route::get("/propriete/{id}/show", 'ProprieteController@show');
@@ -76,11 +76,20 @@ Route::get('type_propriete/{id}/edit','Type_proprieteController@edit')->name("ed
 
 Route::patch('type_propriete/{id}/edit', 'Type_proprieteController@update')->name('update_type');
 
-Route::delete('type_propriete/{id}', 'Type_proprieteController@destroy');
+Route::delete('type_propriete/{id}', 'Type_proprieteController@destroy')->middleware('auth');
 Route::resource('type_propriete', 'Type_proprieteController');
-Route::get("/propriete/{id}/show", 'ProprieteController@show');
-Route::get("/propriete/{slug}/show", 'PropriesteController@show');
-// Auth::routes();
+Route::get("/propriete/{slug}/show", 'ProprieteController@show');// Auth::routes();
+
+
+//mail
+Route::get('/abonnement/expired', "AbonnementController@expired");
+Route::get('/welcome', 'HomeController@index')->name('welcome');
+Route::get('/home', 'ProprieteController@deconnect')->name('deconnexion');
+
 // Route::get('/home', 'HomeController@index')->name('home');
-Auth::routes();
-Route::get('/home', 'HomeController@index')->name('home');
+Auth::routes(['verify'=>true]);
+Route::get('/', 'HomeController@index')->name('home');
+
+//Auth::routes();
+
+

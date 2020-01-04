@@ -1,8 +1,9 @@
 <?php
 namespace App\Http\Controllers;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 
-
+use App\Proprietes;
 use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Str;
 
@@ -13,11 +14,11 @@ use Illuminate\Support\Facades\Storage;
 class ProprieteController extends Controller
 {
     public function affiche(){
-        $perso = \App\Proprietes::orderBy('created_at', 'DESC')->get();
+        $perso = \App\Proprietes::orderBy('created_at', 'ASC')->get();
         return view('propriete.affiche', compact('perso'));
      }
      public function index(){
-      $perso = \App\Proprietes::orderBy('created_at', 'DESC')->get();
+      $perso = \App\Proprietes::orderBy('created_at', 'ASC')->get();
       return view('propriete.affiche', compact('perso'));
    }
       
@@ -48,7 +49,7 @@ public function create()
       "image" => 'nullable | image | mimes:jpeg,png,jpg,gif | max: 2048'
 
       ]);
-
+   
    $propriete = new \App\Proprietes();
    if($request->has('image')){
     $image = $request->file('image');
@@ -70,9 +71,10 @@ public function create()
    $propriete->type_anonce = $request->input('type_anonce');
    $propriete->Type_de_proprietes_id = $request->input('Type_de_proprietes_id');
    $propriete->users_id= $request->input('users_id');
+   $propriete->users_id  = Auth::id();
    $propriete->save();
    return redirect('propriete')->with(['success' => "Propriete enregistré"]);
-   
+
 }
 public function uploadImage(UploadedFile $uploadedFile, $folder = null, $disk = 'public', $filename = null){
     $name = !is_null($filename) ? $filename : str_random('25');
@@ -84,7 +86,8 @@ public function uploadImage(UploadedFile $uploadedFile, $folder = null, $disk = 
 
 public function edit($id)
 {
-    {
+    { 
+        $this->authorize('admin');
         $propriete = \App\Proprietes::find($id);
         $user = \App\User::pluck('id');
         $Type_de_propriete = \App\Type_de_propriete::pluck('nom','id');
@@ -122,7 +125,7 @@ public function update(Request $request, $id){
             "superficie" => $request->input('superficie'),
             "description" => $request->input('description'),
             "type_anonce" => $request->input('type_anonce'),
-            "users_id" => $request->input('users_id'),
+            //"users_id" => $request->input('users_id'),
             "Type_de_proprietes_id" => $request->input('Type_de_proprietes_id'),
         ]);
     }
@@ -137,13 +140,22 @@ public function destroy($id)
    return redirect('/propriete');
 
 }
-public function show($slug){
-    $propriete = Proprietes::where('slug',$slug)->first();
+public function recherche(){
+
+}
+
+
+ public function deconnect(){
+    Auth::logout();
+    return view("home");
+   }
+
+
+   public function show($id){
+    $propriete = Proprietes::find($id);
     return view("propriete.show", compact('propriete'));
  }
  
- 
-
 }//fin de la classe
 
 

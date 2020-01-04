@@ -19,9 +19,9 @@ class CreateProprietesTable extends Migration
             $table->string('image');
             $table->integer('prix_min');
             $table->integer('prix_max');
-            $table->integer('nombre_chambre_min');
-            $table->integer('nombre_chambre_max');
-            $table->integer('salle_de_bain');
+            $table->integer('nombre_chambre_min')->nullable();
+            $table->integer('nombre_chambre_max')->nullable();
+            $table->integer('salle_de_bain')->nullable();
             $table->string('superficie');
             $table->string('type_anonce');
             $table->string('description');

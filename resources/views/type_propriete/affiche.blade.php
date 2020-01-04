@@ -1,3 +1,5 @@
+@extends('layout.app')
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,7 +13,7 @@
    <table class="table">
   <thead class="thead-dark">
   <tr>
-    <th scope="col">id</th>
+    <th scope="col">#</th>
       <th scope="col">type_propriete</th>
       <th scope="col">Modifier</th>
       <th scope="col">Supprimer</th>

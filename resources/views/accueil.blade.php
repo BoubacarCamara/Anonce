@@ -73,7 +73,7 @@
 <!-- Features Section -->
 <div class="row">
   <div class="col-md-4">
-    <h2>www.monanonce.com </h2>
+   
     <p>Publier votre anonce:</p>
     <ul>
       <li>
@@ -87,7 +87,7 @@
     <p></p>
   </div>
   <div class="col-md-4">
-    <h2>www.monanonce.com </h2>
+    
     <p>Publier votre anonce:</p>
     <ul>
       <li>
@@ -101,7 +101,7 @@
     <p></p>
   </div>
   <div class="col-md-4">
-    <h2>www.monanonce.com </h2>
+    
     <p>Publier votre anonce:</p>
     <ul>
       <li>

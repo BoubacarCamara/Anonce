@@ -45,9 +45,10 @@ Route::post('Demande/create','DemandeController@store')->name("ajouter_demande")
 Route::get("/propriete/{id}/show", 'ProprieteController@show');
 
 Route::get('propriete','ProprieteController@affiche');
+Route::get('propriete','ProprieteController@recherche');
 Route::get('propriete/create','ProprieteController@create');
 
-Route::post('propriete/create','ProprieteController@store')->name("ajouter_propriete");
+Route::post('propriete/create','ProprieteController@store')->name("ajouter_propriete")->middleware('auth');
 
 Route::GET('propriete/{id}/edit', 'ProprieteController@edit')->name('edit_propriete');
 Route::patch('propriete/{id}/edit', 'ProprieteController@update')->name('update_propriete');

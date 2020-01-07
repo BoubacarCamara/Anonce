@@ -1,13 +1,17 @@
 @extends('layout.app')
 @section("contenu_de_la_page")
-
+ <!-- Right Side Of Navbar -->
+ 
+ <ul class="navbar-nav ml-auto">
+                        <!-- Authentication Links -->
+                      
 <div class="col-md-12">
 
 <!-- Search Widget -->
 <div class="card mb-4">
   
 
-  <h5 class="card-header">Search</h5>
+  <h5 class="card-header">Recherchez une propriete</h5>
   <div class="card-body">
 <div class="row">
   <div class="input-group col-md-3">
@@ -22,7 +26,7 @@
      
     </div>
     <span class="input-group-btn">
-        <button class="btn btn-danger" type="button">recherche</button>
+        <button class="btn btn-danger" type="button" name="submite"> <a href="#">recherche</a> </button>
       </span>
 </div>
   </div>
@@ -78,7 +82,7 @@
 
 <div class="container">
 
-<h1 class="my-4">Welcome </h1>
+<marquee dirction="left"><mark><h1>Bienvenu  sur monanonce.com</h1></mark></marquee>
 
 
 <!-- /.row -->
@@ -104,93 +108,107 @@
         </div>
     </div>
   </div>
+  <div class="col-lg-4 col-sm-6 portfolio-item">
+    <div class="card h-100">
+    <a href="#"><img class="card-img-top" src="{{$proprietes->image ?? asset('uploads/images/default.png')}}" height="250" width="250" alt=""></a>      <div class="card-body">
+        <h4 class="card-title">
+        <a href="/propriete/{{$proprietes->id}}/show">{{$proprietes->localisation}}{{$proprietes->prix_max}}FCFA</a>
+        </h4>
+        <div class="card-body">
+           <h4 class="card-title">
+               <a href="/propriete/{{$proprietes->id}}/show">{{$proprietes->type_anonce}}</a>
+               
+           </h4>
+           <p class="card-text">{!! \Illuminate\Support\Str::words($proprietes->description, 25,'....')  !!}</p>
+       </div>
+        </div>
+    </div>
+  </div>
+  <div class="col-lg-4 col-sm-6 portfolio-item">
+    <div class="card h-100">
+    <a href="#"><img class="card-img-top" src="{{$proprietes->image ?? asset('uploads/images/default.png')}}" height="250" width="250" alt=""></a>      <div class="card-body">
+        <h4 class="card-title">
+        <a href="/propriete/{{$proprietes->id}}/show">{{$proprietes->localisation}}{{$proprietes->prix_max}}FCFA</a>
+        </h4>
+        <div class="card-body">
+           <h4 class="card-title">
+               <a href="/propriete/{{$proprietes->id}}/show">{{$proprietes->type_anonce}}</a>
+               
+           </h4>
+           <p class="card-text">{!! \Illuminate\Support\Str::words($proprietes->description, 25,'....')  !!}</p>
+       </div>
+        </div>
+    </div>
+  </div>
  
-  <div class="col-lg-4 col-sm-6 portfolio-item">
-    <div class="card h-100">
-    <a href="#"><img class="card-img-top" src="{{$proprietes->image ?? asset('uploads/images/default.png')}}" height="250" width="250" alt=""></a>      <div class="card-body">
-        <h4 class="card-title">
-          <a href="#">Project Two</a>
-        </h4>
-        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
-      </div>
-    </div>
-  </div>
-  <div class="col-lg-4 col-sm-6 portfolio-item">
-    <div class="card h-100">
-    <a href="#"><img class="card-img-top" src="{{$proprietes->image ?? asset('uploads/images/default.png')}}" height="250" width="250" alt=""></a>      <div class="card-body">
-        <h4 class="card-title">
-          <a href="#">Project Three</a>
-        </h4>
-        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos quisquam, error quod sed cumque, odio distinctio velit nostrum temporibus necessitatibus et facere atque iure perspiciatis mollitia recusandae vero vel quam!</p>
-      </div>
-    </div>
-  </div>
-  <div class="col-lg-4 col-sm-6 portfolio-item">
-    <div class="card h-100">
-    <a href="#"><img class="card-img-top" src="{{$proprietes->image ?? asset('uploads/images/default.png')}}" height="250" width="250" alt=""></a>      <div class="card-body">
-        <h4 class="card-title">
-          <a href="#">Project Four</a>
-        </h4>
-        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
-      </div>
-    </div>
-  </div>
-  <div class="col-lg-4 col-sm-6 portfolio-item">
-    <div class="card h-100">
-    <a href="#"><img class="card-img-top" src="{{$proprietes->image ?? asset('uploads/images/default.png')}}" height="250" width="250" alt=""></a>      <div class="card-body">
-        <h4 class="card-title">
-          <a href="#">Project Five</a>
-        </h4>
-        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
-      </div>
-    </div>
-  </div>
-  <div class="col-lg-4 col-sm-6 portfolio-item">
-    <div class="card h-100">
-    <a href="#"><img class="card-img-top" src="{{$proprietes->image ?? asset('uploads/images/default.png')}}" height="250" width="250" alt=""></a>      <div class="card-body">
-        <h4 class="card-title">
-          <a href="#">Project Six</a>
-        </h4>
-        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque earum nostrum suscipit ducimus nihil provident, perferendis rem illo, voluptate atque, sit eius in voluptates, nemo repellat fugiat excepturi! Nemo, esse.</p>
-      </div>
-    </div>
-  </div>
-</div>
+  
 @endforeach
 <!-- /.row -->
 
 <!-- Features Section -->
 <div class="row">
-  <div class="col-lg-6">
-    <h2>Modern Business Features</h2>
-    <p>The Modern Business template by Start Bootstrap includes:</p>
+  <div class="col-md-3">
+    <h2>www.monanonce.com </h2>
+    <p>Publier votre anonce:</p>
     <ul>
       <li>
-        <strong>Bootstrap v4</strong>
+        <strong>Senegal</strong>
       </li>
-      <li>jQuery</li>
-      <li>Font Awesome</li>
-      <li>Working contact form with validation</li>
-      <li>Unstyled page elements for easy customization</li>
+      <li>Service</li>
+      <li>Immobliers</li>
+      <li>Voiture</li>
+      <li>Publicite</li>
     </ul>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis, omnis doloremque non cum id reprehenderit, quisquam totam aspernatur tempora minima unde aliquid ea culpa sunt. Reiciendis quia dolorum ducimus unde.</p>
+    <p></p>
   </div>
-  <div class="col-lg-6">
-  <a href="#"><img class="card-img-top" src="{{$proprietes->image ?? asset('uploads/images/default.png')}}" height="250" width="250" alt=""></a></div>
+  <div class="col-md-3">
+    <h2>www.monanonce.com </h2>
+    <p>Publier votre anonce:</p>
+    <ul>
+      <li>
+        <strong>Senegal</strong>
+      </li>
+      <li>Service</li>
+      <li>Immobliers</li>
+      <li>Voiture</li>
+      <li>Publicite</li>
+    </ul>
+    <p></p>
+  </div>
+  <div class="col-md-3">
+    <h2>www.monanonce.com </h2>
+    <p>Publier votre anonce:</p>
+    <ul>
+      <li>
+        <strong>Senegal</strong>
+      </li>
+      <li>Service</li>
+      <li>Immobliers</li>
+      <li>Voiture</li>
+      <li>Publicite</li>
+    </ul>
+    <p></p>
+  </div>
+  <div class="col-md-3">
+    <h2>www.monanonce.com </h2>
+    <p>Publier votre anonce:</p>
+    <ul>
+      <li>
+        <strong>Senegal</strong>
+      </li>
+      <li>Service</li>
+      <li>Immobliers</li>
+      <li>Voiture</li>
+      <li>Publicite</li>
+    </ul>
+    <p></p>
+  </div>
 <!-- /.row -->
 
-<hr>
+
 
 <!-- Call to Action Section -->
-<div class="row mb-4">
-  <div class="col-md-8">
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias, expedita, saepe, vero rerum deleniti beatae veniam harum neque nemo praesentium cum alias asperiores commodi.</p>
-  </div>
-  <div class="col-md-4">
-    <a class="btn btn-lg btn-success btn-block" href="#">Appellez nous</a>
-  </div>
-  
-</div>
+
 
 </div>
 

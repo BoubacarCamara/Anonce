@@ -141,6 +141,8 @@ public function destroy($id)
 
 }
 public function recherche(){
+        $perso = \App\Proprietes::orderBy('created_at', 'ASC')->get();
+        return view('propriete.affiche', compact('perso'));
 
 }
 

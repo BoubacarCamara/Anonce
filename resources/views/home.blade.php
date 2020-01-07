@@ -146,63 +146,7 @@
 <!-- /.row -->
 
 <!-- Features Section -->
-<div class="row">
-  <div class="col-md-3">
-    
-    <p>Publier votre anonce:</p>
-    <ul>
-      <li>
-        <strong>Senegal</strong>
-      </li>
-      <li>Service</li>
-      <li>Immobliers</li>
-      <li>Voiture</li>
-      <li>Publicite</li>
-    </ul>
-    <p></p>
-  </div>
-  <div class="col-md-3">
-   
-    <p>Publier votre anonce:</p>
-    <ul>
-      <li>
-        <strong>Senegal</strong>
-      </li>
-      <li>Service</li>
-      <li>Immobliers</li>
-      <li>Voiture</li>
-      <li>Publicite</li>
-    </ul>
-    <p></p>
-  </div>
-  <div class="col-md-3">
-   
-    <p>Publier votre anonce:</p>
-    <ul>
-      <li>
-        <strong>Senegal</strong>
-      </li>
-      <li>Service</li>
-      <li>Immobliers</li>
-      <li>Voiture</li>
-      <li>Publicite</li>
-    </ul>
-    <p></p>
-  </div>
-  <div class="col-md-3">
-    
-    <p>Publier votre anonce:</p>
-    <ul>
-      <li>
-        <strong>Senegal</strong>
-      </li>
-      <li>Service</li>
-      <li>Immobliers</li>
-      <li>Voiture</li>
-      <li>Publicite</li>
-    </ul>
-    <p></p>
-  </div>
+
 <!-- /.row -->
 
 
@@ -210,7 +154,7 @@
 <!-- Call to Action Section -->
 
 
-</div>
+
 
 <!-- /.container -->
   <!-- /.container -->

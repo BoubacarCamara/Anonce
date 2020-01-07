@@ -6,7 +6,7 @@
        <div class="row align-items-start my-5">
            <div class="col-lg-5">
                <p><img class="img-fluid rounded mb-4 mb-lg-0" src="{{$propriete->image ?? asset('uploads/images/default.png')}}" alt=""></p>
-               <h3 class="font-weight-light">{{$propriete->localisation}}</h3>
+               <h3 class="font-weight-light">{{$propriete->localisation}}</h3><br>
                <p>{{$propriete->prix_min.'FCFA' ?? ''}}</p>
                <hr>
                <div class="seller-div">
@@ -37,41 +37,7 @@
     <title>www.monanonce.com</title>
   </head>
   <body>
-  <div class="container">
-  <div class="row align-items-start">
-    <div class="col">
-      One of three columns
-    </div>
-    <div class="col">
-      One of three columns
-    </div>
-    <div class="col">
-      One of three columns
-    </div>
-  </div>
-  <div class="row align-items-center">
-    <div class="col">
-      One of three columns
-    </div>
-    <div class="col">
-      One of three columns
-    </div>
-    <div class="col">
-      One of three columns
-    </div>
-  </div>
-  <div class="row align-items-end">
-    <div class="col">
-      One of three columns
-    </div>
-    <div class="col">
-      One of three columns
-    </div>
-    <div class="col">
-      One of three columns
-    </div>
-  </div>
-</div>
+  
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

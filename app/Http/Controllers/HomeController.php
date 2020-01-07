@@ -24,7 +24,7 @@ class HomeController extends Controller
     public function index()
     {
         $propriete = Proprietes::all()->take(6);
-        return view('home',compact('propriete','perso'));
+        return view('home',compact('propriete'));
     }
 
    

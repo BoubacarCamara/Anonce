@@ -143,22 +143,6 @@
  
   
 @endforeach
-<!-- /.row -->
 
-<!-- Features Section -->
-
-<!-- /.row -->
-
-
-
-<!-- Call to Action Section -->
-
-
-
-
-<!-- /.container -->
-  <!-- /.container -->
-
-  <!-- Footer -->
   
 @endsection

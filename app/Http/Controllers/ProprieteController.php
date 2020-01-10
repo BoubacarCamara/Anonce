@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Storage;
 class ProprieteController extends Controller
 {
     public function affiche(){
+        
         $perso = \App\Proprietes::orderBy('created_at', 'ASC')->get();
         return view('propriete.affiche', compact('perso'));
      }
@@ -35,15 +36,15 @@ public function create()
    
    $data = $request->validate([
       'localisation'=>'required|min:2',
-      'prix_min'=>'required|max:10000',
+      'prix_min'=>'required|max:1000',
       'prix_max'=>'max:1000000',
       'nombre_chambre_min'=>'max:1'
       ,'nombre_chambre_max'=>'max:30',
       'salle_de_bain'=>'max:20',
-      'superficie'=>'max:200000',
+      'superficie'=>'max:2000',
       'type_anonce'=>'max:20',
       'description'=>'max:20000',
-      'Type_de_proprietes_id'=>'max:2000',
+      'Type_de_proprietes_id'=>'max:200',
       'users_id'=>'max:50',
 
       "image" => 'nullable | image | mimes:jpeg,png,jpg,gif | max: 2048'
@@ -87,7 +88,7 @@ public function uploadImage(UploadedFile $uploadedFile, $folder = null, $disk = 
 public function edit($id)
 {
     { 
-        $this->authorize('admin');
+       
         $propriete = \App\Proprietes::find($id);
         $user = \App\User::pluck('id');
         $Type_de_propriete = \App\Type_de_propriete::pluck('nom','id');
@@ -134,6 +135,7 @@ public function update(Request $request, $id){
     
 public function destroy($id)
 {
+    $this->authorize('admin');
    $propriete = \App\Proprietes::find($id);
    if($propriete)
        $propriete->delete();

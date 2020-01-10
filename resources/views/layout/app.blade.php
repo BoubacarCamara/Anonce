@@ -15,6 +15,7 @@
  <!-- Navigation -->
  <nav class="navbar fixed-top navbar-expand-lg navbar-dark  bg-primary fixed-top">
     <div class="container">
+    <img src="/images/top.png" width="5%" alt=""><br>
       <a class="navbar-brand" href="#">Monanonce.com</a>
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -23,6 +24,9 @@
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
             <a class="nav-link" href="/accueil">Accueil</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/contact">Contact</a>
           </li>
            <!-- Right Side Of Navbar -->
            <ul class="navbar-nav ml-auto">

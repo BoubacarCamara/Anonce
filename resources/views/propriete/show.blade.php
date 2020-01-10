@@ -7,7 +7,7 @@
            <div class="col-lg-5">
                <p><img class="img-fluid rounded mb-4 mb-lg-0" src="{{$propriete->image ?? asset('uploads/images/default.png')}}" alt=""></p>
                <h3 class="font-weight-light">{{$propriete->localisation}}</h3><br>
-               <p>{{$propriete->prix_min.'FCFA' ?? ''}}</p>
+               <p>{{$propriete->prix_min.'FCFA' ?? ''}}</p><br>
                <hr>
                <div class="seller-div">
                    <h3>Infos du proprietaire</h3>

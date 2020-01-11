@@ -23,6 +23,7 @@
             <h3>Bienvenu</h3>
             <p>Monanonce.com</p>
           </div>
+         <button btn-indigo><a href="/propreite/create">Publier</a></button>
         </div>
         <!-- Slide Three - Set the background image for this slide in the line below -->
         <div class="carousel-item" style="background-image: url('./images/img7.jpg')">

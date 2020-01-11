@@ -56,7 +56,7 @@
 @foreach($propriete as $proprietes)
 
 <div class="row">
-  <div class="col-lg-4 col-sm-6 portfolio-item">
+  <div class="col-lg-4 col-sm-6 col-md-4 portfolio-item">
     <div class="card h-100">
     <a href="#"><img class="card-img-top" src="{{$proprietes->image ?? asset('uploads/images/default.png')}}" height="250" width="250" alt=""></a>      <div class="card-body">
         <h4 class="card-title">
@@ -72,11 +72,11 @@
         </div>
     </div>
   </div>
-  <div class="col-lg-4 col-sm-6 portfolio-item">
+  <div class="col-lg-4 col-sm-6 col-md-4 portfolio-item">
     <div class="card h-100">
     <a href="#"><img class="card-img-top" src="{{$proprietes->image ?? asset('uploads/images/default.png')}}" height="250" width="250" alt=""></a>      <div class="card-body">
         <h4 class="card-title">
-        <a href="/propriete/{{$proprietes->id}}/show">{{$proprietes->localisation}}{{$proprietes->prix_max}}FCFA</a>
+        <a href="/propriete/{{$proprietes->id}}/show">{{$proprietes->localisation}}<br>{{$proprietes->prix_max}}FCFA</a>
         </h4>
         <div class="card-body">
            <h4 class="card-title">
@@ -88,11 +88,11 @@
         </div>
     </div>
   </div>
-  <div class="col-lg-4 col-sm-6 portfolio-item">
+  <div class="col-lg-4 col-sm-6  col-md-4 portfolio-item">
     <div class="card h-100">
     <a href="#"><img class="card-img-top" src="{{$proprietes->image ?? asset('uploads/images/default.png')}}" height="250" width="250" alt=""></a>      <div class="card-body">
         <h4 class="card-title">
-        <a href="/propriete/{{$proprietes->id}}/show">{{$proprietes->localisation}}{{$proprietes->prix_max}}FCFA</a>
+        <a href="/propriete/{{$proprietes->id}}/show">{{$proprietes->localisation}}<br>{{$proprietes->prix_max}}FCFA</a>
         </h4>
         <div class="card-body">
            <h4 class="card-title">

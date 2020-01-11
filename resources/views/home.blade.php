@@ -55,9 +55,9 @@
 <!-- Portfolio Section -->
 <h2></h2>
 
+@foreach($propriete as $proprietes)
 
 <div class="row">
-@foreach($propriete as $proprietes)
   <div class="col-lg-4 col-sm-6 col-md-4 portfolio-item">
     <div class="card h-100">
     <a href="#"><img class="card-img-top" src="{{$proprietes->image ?? asset('uploads/images/default.png')}}" height="250" width="250" alt=""></a>      <div class="card-body">
@@ -105,7 +105,7 @@
        </div>
         </div>
     </div>
-    @endforeach
+   
   </div>
-
+  @endforeach
 @endsection

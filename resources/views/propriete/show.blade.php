@@ -13,8 +13,8 @@
                <div class="seller-div">
                    <h3>Infos du proprietaire</h3>
                    <strong>{{$propriete->users->name}}</strong><br><br>
-                   <strong><i class="fa fa-home"></i>Adresse email:</strong>{{$propriete->users->email}}<br><br>
-                   <strong><i class="fa fa-phone-alt"></i> telephone:</strong> <button classe="btn btn-danger">{{$propriete->users->telephone}}</button> <br>
+                   <strong><i class="fa fa-home"></i><i class="far fa-envelope"></i>Adresse email:</strong>{{$propriete->users->email}}<br><br>
+                   <strong><i class="fa fa-phone-alt"></i> <i class="fas fa-tty"></i>telephone:</strong> <button classe="btn btn-danger">{{$propriete->users->telephone}}</button> <br>
                </div>
            </div>
            <!-- /.col-lg-8 -->

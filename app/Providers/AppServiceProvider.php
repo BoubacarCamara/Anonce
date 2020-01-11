@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Providers;
+Use Illuminate\Support\Facades\Schema;
 use App\User;
 use Illuminate\Support\Facades\Gate;
 
@@ -31,6 +32,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        if(config('app.env')==='production'){
+            \URL::forceSchema('https');
+        }
         \Illuminate\Support\Facades\Schema::defaultStringLength(191);
     }
 }

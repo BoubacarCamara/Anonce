@@ -76,4 +76,9 @@ class RegisterController extends Controller
             'password' => Hash::make($data['password']),
         ]);
     }
+    public function affiche(array $data){
+        
+        $perso = \App\User::orderBy('created_at', 'ASC')->get();
+        return view('users.affiche', compact('perso'));
+     }
 }

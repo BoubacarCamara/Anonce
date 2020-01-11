@@ -82,14 +82,6 @@
 
 
   <footer class="py-5 bg-primary">
-  <style>
-{
-  footer{
-    position:fixed;
-
-  }
-}
-</style>
     <div class="container">
     <img src="/images/face.jpg" width="5%" alt=""><br>
     <img src="/images/email.png" width="5%" alt="">boubacarpoulo6@gmail.com<br>

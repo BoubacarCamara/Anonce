@@ -19,6 +19,7 @@
 
 Route::get("home","HomeController@index");
 Route::get("contact","HomeController@index");
+Route::get("users","RegisterController@affiche");
 Route::get("accueil","accueilController@accueil"); 
 Route::post("accueil","accueilController@accueil");
 Route::get("personne","personneController@personne"); 

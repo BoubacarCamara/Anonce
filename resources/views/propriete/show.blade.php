@@ -7,6 +7,7 @@
            <div class="col-lg-5">
                <p><img class="img-fluid rounded mb-4 mb-lg-0" src="{{$propriete->image ?? asset('uploads/images/default.png')}}" alt=""></p>
                <h3 class="font-weight-light">{{$propriete->localisation}}</h3><br>
+               <label for="">Prix</label>
                <p>{{$propriete->prix_min.'FCFA' ?? ''}}</p><br>
                <hr>
                <div class="seller-div">
@@ -18,7 +19,10 @@
            </div>
            <!-- /.col-lg-8 -->
            <div class="col-lg-7">
+           <label for="">Description</label>
                <p>{!!$propriete->description!!}</p>
+               <label for="">Nomdre de chambre</label>
+               <p>{!!$propriete->nombre_chambre_min!!}</p>
                <a class="btn btn-primary" href="/propriete/{{$propriete->id}}/show">Contactez moi</a>
            </div>
            <!-- /.col-md-4 -->

@@ -1,8 +1,7 @@
 @extends('layout.app')
 @section("contenu_de_la_page")
  <!-- Right Side Of Navbar -->
- 
- 
+
 <!-- Page Content -->
 
 <div class="container">
@@ -15,7 +14,6 @@
 <!-- Portfolio Section -->
 <h2></h2>
 @foreach($propriete as $proprietes)
-
 <div class="row">
   <div class="col-lg-4 col-sm-6  col-md-6 portfolio-item">
     <div class="card h-100">

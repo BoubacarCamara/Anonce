@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Providers;
-Use Illuminate\Support\Facades\Schema;
+use Illuminate\Support\Facades\Schema;
 use App\User;
 use Illuminate\Support\Facades\Gate;
 

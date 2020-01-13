@@ -74,8 +74,7 @@ public function create()
    $propriete->users_id= $request->input('users_id');
    $propriete->users_id  = Auth::id();
    $propriete->save();
-   return redirect('propriete')->with(['success' => "Propriete enregistré"]);
-
+   return redirect('/')->with(['success' => "Propriete enregistré"]);
 }
 public function uploadImage(UploadedFile $uploadedFile, $folder = null, $disk = 'public', $filename = null){
     $name = !is_null($filename) ? $filename : str_random('25');

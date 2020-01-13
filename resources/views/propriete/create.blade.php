@@ -88,7 +88,10 @@
                </div>
                <div>
                    <button class="btn btn-success">Enregistrer</button>
-               </div>              
+               </div>    
+               @if(session('success'))
+   <div class="alert alert-success">{{session('success')}}</div>
+@endif          
 </div>
            </form>
            <button type="button" class="btn btn-outline-primary">Primary</button>

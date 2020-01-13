@@ -37,16 +37,9 @@
                         <li class="nav-item">
                           <a class="nav-link" href="/contact">Anonce</a>
                         </li>
-                        <li class="nav-item dropdown">
-                              <button class="btn btn-danger" type="button"><a href="/propriete/create">Publier</a></button>
-                            </li>
+                      
                         @guest
-                        <li class="nav-item">
-                          <a class="nav-link" href="/accueil">Accueil</a>
-                        </li>
-                        <li class="nav-item">
-                          <a class="nav-link" href="/contact">Anonce</a>
-                        </li>
+                      
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('login') }}">{{ __('Connexion') }}</a>
                             </li>
@@ -56,9 +49,7 @@
                                 </li>
 
                             @endif
-                            <li class="nav-item dropdown">
-                              <button class="btn btn-danger" type="button"><a href="/propriete/create">Publier</a></button>
-                            </li>
+      
                         @else
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
@@ -78,6 +69,9 @@
                             </li>
     
                         @endguest
+                        <li class="nav-item dropdown">
+                              <button class="btn btn-danger" type="button"><a href="/propriete/create">Publier</a></button>
+                            </li>
                     </ul>
          
       <!-- <span class="input-group-btn">
@@ -103,15 +97,14 @@
 
   <footer class="py-5 bg-primary">
     <div class="container">
-    <img src="/images/face.jpg" width="5%" alt=""><br>
-    <img src="/images/email.png" width="5%" alt="">boubacarpoulo6@gmail.com<br>
-    <a href="https://www.youtube.com/channel/UCtQM-j0hundL7bTlkkQywTg"><img src="/images/ypu.jpeg" width="5%" alt=""></a><br>
+    
+   
     <span style="font-size: 3rem;">
   <span style="color: Mediumslateblue;">
   <i class="fas fa-camera"></i>
   </span>
 </span>
-      <p class="m-0 text-center text-white">Tout droit reserve &copy; www.monanonce.com 2019</p>
+      <p class="m-0 text-center text-white">Tout droit réservé &copy; www.monanonce.com 2019</p>
     </div>
     
   </footer>

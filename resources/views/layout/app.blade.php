@@ -31,6 +31,15 @@
            <!-- Right Side Of Navbar -->
            <ul class="navbar-nav ml-auto">
                         <!-- Authentication Links -->
+                        <li class="nav-item">
+                          <a class="nav-link" href="/accueil">Accueil</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="/contact">Anonce</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                              <button class="btn btn-danger" type="button"><a href="/propriete/create">Publier</a></button>
+                            </li>
                         @guest
                         <li class="nav-item">
                           <a class="nav-link" href="/accueil">Accueil</a>

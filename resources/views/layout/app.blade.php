@@ -21,17 +21,23 @@
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav ml-auto">
+        <!-- <ul class="navbar-nav ml-auto">
           <li class="nav-item">
             <a class="nav-link" href="/accueil">Accueil</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/contact">Contact</a>
-          </li>
+            <a class="nav-link" href="/contact">A propos</a>
+          </li> -->
            <!-- Right Side Of Navbar -->
            <ul class="navbar-nav ml-auto">
                         <!-- Authentication Links -->
                         @guest
+                        <li class="nav-item">
+                          <a class="nav-link" href="/accueil">Accueil</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="/contact">Anonce</a>
+                        </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('login') }}">{{ __('Connexion') }}</a>
                             </li>
@@ -39,7 +45,11 @@
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('register') }}">{{ __('Inscrivez-vous') }}</a>
                                 </li>
+
                             @endif
+                            <li class="nav-item dropdown">
+                              <button class="btn btn-danger" type="button"><a href="/propriete/create">Publier</a></button>
+                            </li>
                         @else
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
@@ -57,14 +67,15 @@
                                     </form>
                                 </div>
                             </li>
+    
                         @endguest
                     </ul>
          
-      <span class="input-group-btn">
+      <!-- <span class="input-group-btn">
         <button class="btn btn-danger" type="button"><a href="/propriete/create">Publier</a></button>
-      </span>
-      </li>
-        </ul>
+      </span> -->
+      <!-- </li>
+        </ul> -->
       </div>
     </div>
   </nav>

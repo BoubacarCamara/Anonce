@@ -18,12 +18,12 @@
           </div>
         </div>
         <!-- Slide Two - Set the background image for this slide in the line below -->
-        <div class="carousel-item" style="background-image: url('./images/img7.jpg')">
+        <div class="carousel-item" style="background-image: url('./images/imo.jpg')">
           <div class="carousel-caption d-none d-md-block">
             <h3>Bienvenu</h3>
             <p>Monanonce.com</p>
           </div>
-         <button btn-indigo><a href="/propreite/create">Publier</a></button>
+        
         </div>
         <!-- Slide Three - Set the background image for this slide in the line below -->
         <div class="carousel-item" style="background-image: url('./images/img7.jpg')">
@@ -56,59 +56,25 @@
 <!-- Portfolio Section -->
 <h2></h2>
 
-@foreach($propriete as $proprietes)
-
 <div class="row">
-  <div class="col-lg-4 col-sm-6 col-md-4 portfolio-item">
+@foreach($propriete as $proprietes)
+  <div class="col-lg-3 col-sm-3 col-md-3 col-xs-12 portfolio-item ">
     <div class="card h-100">
-    <a href="#"><img class="card-img-top" src="{{$proprietes->image ?? asset('uploads/images/default.png')}}" height="250" width="250" alt=""></a>      <div class="card-body">
+    <a href="#"><img class="card-img-top" style="height:200px;" src="{{$proprietes->image ?? asset('uploads/images/default.png')}}" height="250" width="250" alt=""></a>      <div class="card-body">
         <h4 class="card-title">
         <a href="/propriete/{{$proprietes->id}}/show">{{$proprietes->localisation}}<br>{{$proprietes->prix_max}}FCFA</a>
         </h4>
-        <div class="card-body">
+        <div class="card-body" style="height:60px;">
            <h4 class="card-title">
                <a href="/propriete/{{$proprietes->id}}/show">{{$proprietes->type_anonce}}</a>
                
            </h4>
-           <p class="card-text">{!! \Illuminate\Support\Str::words($proprietes->description, 25,'....')  !!}</p>
+           <!-- <p class="card-text">{!! \Illuminate\Support\Str::words($proprietes->description, 25,'....')  !!}</p> -->
        </div>
         </div>
     </div>
   </div>
-  <div class="col-lg-4 col-sm-6 col-md-4 portfolio-item">
-    <div class="card h-100">
-    <a href="#"><img class="card-img-top" src="{{$proprietes->image ?? asset('uploads/images/default.png')}}" height="250" width="250" alt=""></a>      <div class="card-body">
-        <h4 class="card-title">
-        <a href="/propriete/{{$proprietes->id}}/show">{{$proprietes->localisation}}<br>{{$proprietes->prix_max}}FCFA</a>
-        </h4>
-        <div class="card-body">
-           <h4 class="card-title">
-               <a href="/propriete/{{$proprietes->id}}/show">{{$proprietes->type_anonce}}</a>
-               
-           </h4>
-           <p class="card-text">{!! \Illuminate\Support\Str::words($proprietes->description, 25,'....')  !!}</p>
-       </div>
-        </div>
-    </div>
-  </div>
-  <div class="col-lg-4 col-sm-6  col-md-4 portfolio-item">
-    <div class="card h-100">
-    <a href="#"><img class="card-img-top" src="{{$proprietes->image ?? asset('uploads/images/default.png')}}" height="250" width="250" alt=""></a>      <div class="card-body">
-        <h4 class="card-title">
-        <a href="/propriete/{{$proprietes->id}}/show">{{$proprietes->localisation}}<br>{{$proprietes->prix_max}}FCFA</a>
-        </h4>
-        <div class="card-body">
-           <h4 class="card-title">
-               <a href="/propriete/{{$proprietes->id}}/show">{{$proprietes->type_anonce}}</a>
-               
-           </h4>
-           <p class="card-text">{!! \Illuminate\Support\Str::words($proprietes->description, 1000,'....')  !!}</p>
-       </div>
-       </div>
-  
-        </div>
-    </div>
-    <div>
+<!--   
     <nav aria-label="...">
   <ul class="pagination">
     <li class="page-item disabled">
@@ -126,10 +92,10 @@
       <a class="page-link" href="#">Next</a>
     </li>
   </ul>
-</nav>
+</nav> -->
+  @endforeach
     </div>
    
  
-  @endforeach
   
 @endsection

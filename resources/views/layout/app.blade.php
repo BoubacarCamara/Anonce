@@ -97,7 +97,14 @@
 
   <footer class="py-5 bg-primary">
     <div class="container">
-    
+    <p>
+    <h6>Contact</h6>
+    78-365-24-56
+    <h6>Email</h6>
+    boubacarpoulo6@gmail.com
+    <h6>Adresse</h6>
+    medina rue 43 x 36 
+    </p>
    
     <span style="font-size: 3rem;">
   <span style="color: Mediumslateblue;">

@@ -97,10 +97,9 @@
            <button type="button" class="btn btn-outline-primary">Servive</button>
 <button type="button" class="btn btn-outline-secondary">Vehicule</button>
 <button type="button" class="btn btn-outline-success">Recrutement</button>
-<button type="button" class="btn btn-outline-danger">Cours a domicile</button>
+<button type="button" class="btn btn-outline-danger">Produit</button>
 <button type="button" class="btn btn-outline-warning">Creer votre site</button>
 <button type="button" class="btn btn-outline-info">Information</button>
-<button type="button" class="btn btn-outline-light">Produit</button>
 <button type="button" class="btn btn-outline-dark">Restaurant</button>
 </body>
 </html>

@@ -1,4 +1,4 @@
-<form method="POST" action="{{route('login_admin')}}">
+<!-- <form method="POST" action="{{route('login_admin')}}">
 @csrf
   <div class="form-row align-items-center">
     <div class="col-auto">
@@ -26,4 +26,4 @@
       <button type="submit" class="btn btn-primary mb-2">Valider</button>
     </div>
   </div>
-</form>
+</form> -->

@@ -89,9 +89,9 @@ Route::get('/welcome', 'HomeController@index')->name('welcome');
 Route::get('/home', 'ProprieteController@deconnect')->name('deconnexion');
 
 ///admin
-Route::get('admin.login', 'Admin\LoginController@showLoginForm')->name('login_admin');
-Route::post('admin.login', 'Admin\LoginController@login')->name('login_admin');
-Route::post('admin.logout', 'Admin\LoginController@logout')->name('logout_admin');
+// Route::get('admin.login', 'Admin\LoginController@showLoginForm')->name('login_admin');
+// Route::post('admin.login', 'Admin\LoginController@login')->name('login_admin');
+// Route::post('admin.logout', 'Admin\LoginController@logout')->name('logout_admin');
 
 // Route::get('/home', 'HomeController@index')->name('home');
 Auth::routes(['verify'=>true]);

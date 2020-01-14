@@ -1,4 +1,4 @@
-<?php
+<!-- <?php
 
 namespace App\Http\Controllers\Auth;
 
@@ -25,24 +25,24 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/admin.affiche';
+    // protected $redirectTo = '/admin.affiche';
 
     /**
      * Create a new controller instance.
      *
      * @return void
      */
-    public function __construct()
-    {
-        $this->middleware('guest:admin')->except('logout_admin');
-    }
+    // public function __construct()
+    // {
+    //     $this->middleware('guest:admin')->except('logout_admin');
+    // }
  
-    public function showLoginForm()
-    {
-        return view('admin.login');
-    }
-    public function guard()
-    {
-        return Auth::guard('admin');
-    }
-}
+    // public function showLoginForm()
+//     {
+//         return view('admin.login');
+//     }
+//     public function guard()
+//     {
+//         return Auth::guard('admin');
+//     } -->
+// }

@@ -87,7 +87,7 @@ Les visiteurs pourrons vous joindre a partir de vos information personnel.
 </form>
 <div class="card-group">
   <div class="card">
-   <a href="#"> <img src="/images/imo.jpg" class="card-img-top" alt="..."></a>
+   <a href="#"> <img src="/images/index.jpeg" class="card-img-top" alt="..."></a>
     <div class="card-body">
       <h5 class="card-title">Villa</h5>
       <p class="card-text">A vendre </p>
@@ -97,7 +97,7 @@ Les visiteurs pourrons vous joindre a partir de vos information personnel.
     </div>
   </div>
   <div class="card">
-   <a href="#"> <img src="/images/imo.jpg" class="card-img-top" alt="..."></a>
+   <a href="#"> <img src="/images/ik.jpeg" class="card-img-top" alt="..."></a>
     <div class="card-body">
       <h5 class="card-title">Appartement</h5>
       <p class="card-text">A louer</p>

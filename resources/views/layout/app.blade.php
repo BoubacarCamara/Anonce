@@ -97,9 +97,10 @@
   <footer class="py-5 bg-primary">
     <div class="container">
     <div class="row text-white">
-    <div col-md-4>  
-    <p>
+    <div col-md-6 col-sm-6>  
     <h5>Contact</h5>
+    <p>
+   
     78-365-24-56
     <h5>Email</h5>
     boubacarpoulo6@gmail.com

@@ -112,7 +112,8 @@
    <div col-md-6 col-sm-6 >
    <h5>Qui  sommes nous?</h5>
    <p>
-   Monanonnce.com est un site web pour les annonces 
+   Monanonnce.com est un site web 
+   pour les annonces 
    immobiliers. 
    <h5>A  qui appartient le site?</h5>
    Développer par Boubacar CAMARA 

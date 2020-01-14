@@ -50,5 +50,15 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
   </body>
 </html>
+</form>
+           <button type="button" class="btn btn-outline-primary">Servive</button>
+<button type="button" class="btn btn-outline-secondary">Vehicule</button>
+<button type="button" class="btn btn-outline-success">Recrutement</button>
+<button type="button" class="btn btn-outline-danger">Produit</button>
+<button type="button" class="btn btn-outline-warning">Creer votre site</button>
+<button type="button" class="btn btn-outline-info">Information</button>
+<button type="button" class="btn btn-outline-dark">Restaurant</button>
+</body>
+</html>
 
 @endsection

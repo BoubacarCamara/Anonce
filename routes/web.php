@@ -18,11 +18,11 @@
 
 
 Route::get("home","HomeController@index");
-Route::get("contact","HomeController@index");
-Route::get("users","RegisterController@affiche");
+Route::get("anonce","HomeController@index");
+// Route::get("users","RegisterController@affiche");
 Route::get("accueil","accueilController@accueil"); 
 Route::post("accueil","accueilController@accueil");
-Route::get("personne","personneController@personne"); 
+// Route::get("personne","personneController@personne"); 
 //demande
 Route::get('/Demande','DemandeController@index');
 Route::get('Demande/create','DemandeController@create');
@@ -87,6 +87,11 @@ Route::get("/propriete/{slug}/show", 'ProprieteController@show');// Auth::routes
 Route::get('/abonnement/expired', "AbonnementController@expired");
 Route::get('/welcome', 'HomeController@index')->name('welcome');
 Route::get('/home', 'ProprieteController@deconnect')->name('deconnexion');
+
+///admin
+Route::get('admin.login', 'Admin\LoginController@showLoginForm')->name('login_admin');
+Route::post('admin.login', 'Admin\LoginController@login')->name('login_admin');
+Route::post('admin.logout', 'Admin\LoginController@logout')->name('logout_admin');
 
 // Route::get('/home', 'HomeController@index')->name('home');
 Auth::routes(['verify'=>true]);

@@ -40,10 +40,8 @@
 
 </div>
 <div class="col-sm-4 col-md-4 col-lg-4 text-center margin-top:15;">
-<h3 style="border:1px solid black; padding-top:25px; color:yellow; margin-left:30px; width:150px; height:150px; border-radius:100%;">contrat</h3>
-<!-- Button trigger modal -->
-<button type="button" display=center class="btn btn-primary" data-toggle="modal" data-target="#exampleModalScrollable">
-  voir plus
+<h3 style="border:1px solid black; padding-top:25px; color:dark; margin-left:30px; width:150px; height:150px; border-radius:100%;"><button type="button" display=center class="btn btn-primary" data-toggle="modal" data-target="#exampleModalScrollable">
+  contrat
 </button> 
 <!-- Modal -->
 <div class="modal fade" id="exampleModalScrollable" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
@@ -56,8 +54,7 @@
         </button>
       </div>
       <div class="modal-body">
-      <p style=" width=50%;" >
-<h5 >Publier</h5>
+      <h5 >Publier</h5>
 votre anonce sur notre site web gratuitement .
 Pour beneficier de notre publicite vous devais d'abord creer un compte
 Tout publication d'anonce doit passer par le bouton Publier
@@ -69,7 +66,7 @@ le nombre de chambre, nomdre de salle de bain etc...
 Toujours ajouter une photo pour vos anonce .
 Les visiteurs pourrons vous joindre a partir de vos information personnel.
 </p> 
-        
+       
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
@@ -78,7 +75,9 @@ Les visiteurs pourrons vous joindre a partir de vos information personnel.
     </div>
   </div>
 </div> 
-<!-- <form> -->
+<!-- <form> --></h3>
+<!-- Button trigger modal -->
+
 
 
 
@@ -118,4 +117,14 @@ Les visiteurs pourrons vous joindre a partir de vos information personnel.
     </div>
   </div>
 </div>
+</form>
+           <button type="button" class="btn btn-outline-primary">Servive</button>
+<button type="button" class="btn btn-outline-secondary">Vehicule</button>
+<button type="button" class="btn btn-outline-success">Recrutement</button>
+<button type="button" class="btn btn-outline-danger">Mode-beaute</button>
+<button type="button" class="btn btn-outline-warning">Creer votre site</button>
+<button type="button" class="btn btn-outline-info">Information</button>
+<button type="button" class="btn btn-outline-dark">Restaurant</button>
+</body>
+</html>
 @endsection

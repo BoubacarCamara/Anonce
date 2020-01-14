@@ -26,7 +26,7 @@
         
         </div>
         <!-- Slide Three - Set the background image for this slide in the line below -->
-        <div class="carousel-item" style="background-image: url('./images/img7.jpg')">
+        <div class="carousel-item" style="background-image: url('./images/app.jpg')">
           <div class="carousel-caption d-none d-md-block">
             <h3>Bienvenu</h3>
             <p>Monanonce.com</p>

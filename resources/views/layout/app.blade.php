@@ -96,24 +96,32 @@
 
   <footer class="py-5 bg-primary">
     <div class="container">
+    <div class="row text-white">
+    <div col-md-4>  
     <p>
-    <h6>Contact</h6>
+    <h5>Contact</h5>
     78-365-24-56
-    <h6>Email</h6>
+    <h5>Email</h5>
     boubacarpoulo6@gmail.com
     <h6>Adresse</h6>
     medina rue 43 x 36 
     </p>
-   
-    <span style="font-size: 3rem;">
-  <span style="color: Mediumslateblue;">
-  <i class="fas fa-camera"></i>
-  </span>
-</span>
-      <p class="m-0 text-center text-white">Tout droit réservé &copy; www.monanonce.com 2019</p>
     </div>
-    
+    &nbsp; &nbsp;&nbsp;
+   <div col-md-6 col-sm-6 >
+   <h5>Qui  sommes nous?</h5>
+   <p>
+   Monanonnce.com est un site web pour les annonces 
+   immobiliers. 
+   <h5>A  qui appartient le site?</h5>
+   Développer par Boubacar CAMARA 
+   </p>
+   </div>
+      </div>
+    <p class="m-0 text-center text-white">Tout droit réservé &copy; www.monanonce.com 2019</p>
+
   </footer>
+
 <script src="{{asset('js/app.js')}}"></script>
 
 </body>

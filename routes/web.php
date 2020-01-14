@@ -95,7 +95,7 @@ Route::post('admin.logout', 'Admin\LoginController@logout')->name('logout_admin'
 
 // Route::get('/home', 'HomeController@index')->name('home');
 Auth::routes(['verify'=>true]);
-Route::get('/', 'HomeController@index')->name('home');
+Route::get('/accueil', 'HomeController@index')->name('home');
 
 //Auth::routes();
 

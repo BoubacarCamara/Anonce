@@ -47,7 +47,7 @@ Route::get("/propriete/{id}/show", 'ProprieteController@show');
 
 Route::get('propriete','ProprieteController@affiche');
 Route::get('propriete','ProprieteController@recherche');
-Route::get('propriete/create','ProprieteController@create');
+Route::get('propriete/create','ProprieteController@create')->middleware('auth');
 
 Route::post('propriete/create','ProprieteController@store')->name("ajouter_propriete")->middleware('auth');
 

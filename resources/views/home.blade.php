@@ -60,7 +60,7 @@
 @foreach($propriete as $proprietes)
   <div class="col-lg-3 col-sm-3 col-md-3 col-xs-12 portfolio-item ">
     <div class="card h-100">
-    <a href="#"><img class="card-img-top" style="height:200px;" src="{{$proprietes->image ?? asset('uploads/images/default.png')}}" height="250" width="250" alt=""></a>      <div class="card-body">
+    <a href="#"><img class="card-img-top" style="height:200px;" src="{{$proprietes->image ? asset($proprietes->image): asset('uploads/images/default.png')}}" height="250" width="250" alt="{{$proprietes->type_anonce}}"></a><div class="card-body"> 
         <h4 class="card-title">
         <a href="/propriete/{{$proprietes->id}}/show">{{$proprietes->localisation}}<br>{{$proprietes->prix_max}}FCFA</a>
         </h4>

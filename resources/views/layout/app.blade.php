@@ -13,7 +13,11 @@
 </head>
 <body>
  <!-- Navigation -->
+<<<<<<< HEAD
  <nav class="navbar fixed-top navbar-expand-lg navbar-dark  bg-Dark fixed-top">
+=======
+ <nav class="navbar fixed-top navbar-expand-lg navbar-dark  bg-secondary fixed-top">
+>>>>>>> stage
     <div class="container">
       <a class="navbar-brand" href="#">MonAnonce.com</a>
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -95,7 +99,7 @@
   @yield('contenu_de_la_page')
 
 
-  <footer class="py-5 bg-Dark">
+  <footer class="py-5 bg-secondary">
     <div class="container">
     <div class="row text-white">
     <div col-md-6 col-sm-6>  

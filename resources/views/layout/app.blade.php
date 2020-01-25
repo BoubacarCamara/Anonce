@@ -80,6 +80,7 @@
         </ul> -->
       </div>
     </div>
+    
   </nav>
 
  
@@ -101,7 +102,7 @@
     <h5>Contact</h5>
     <p>
    
-    78-365-24-56
+    +221/78-365-24-56
     <h5>Email</h5>
     boubacarpoulo6@gmail.com
     <h6>Adresse</h6>

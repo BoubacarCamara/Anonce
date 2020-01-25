@@ -15,8 +15,11 @@
 //     return view('welcome');
     
 // });
-
-
+//recherche 
+// Route::get('/search', function (Request $request) {
+//     return App\Proprietes::search($request->search)->get();
+// });
+//
 Route::get("home","HomeController@index");
 Route::get("anonce","HomeController@index");
 // Route::get("users","RegisterController@affiche");

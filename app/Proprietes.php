@@ -29,6 +29,10 @@ class Proprietes extends Model
         $model->slug = $model->slugGenerator(Str::slug($model->name));
         });
      }
-     
+////recherche fonction 
+public function shouldBeSearchable()
+{
+    return $this->isPublished();
+}
      
 }

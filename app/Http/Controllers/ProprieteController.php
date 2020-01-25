@@ -8,6 +8,7 @@ use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Str;
 
 
+
 //use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
@@ -56,7 +57,7 @@ public function create()
     $image = $request->file('image');
     //dd($image);
     $image_name = \Illuminate\Support\Str::slug($request->input('name')).'_'.time();
-    $folder = '/uploads/images/';
+    $folder = '/public/uploads/images/';
     $propriete->image = $folder.$image_name.'.'.$image->getClientOriginalExtension();
     $this->uploadImage($image, $folder, 'public', $image_name);
 }
@@ -71,6 +72,7 @@ public function create()
    $propriete->description = $request->input('description');
    $propriete->type_anonce = $request->input('type_anonce');
    $propriete->Type_de_proprietes_id = $request->input('Type_de_proprietes_id');
+   //$propriete->image = $request->input('image');
    $propriete->users_id= $request->input('users_id');
    $propriete->users_id  = Auth::id();
    $propriete->save();
@@ -108,7 +110,7 @@ public function update(Request $request, $id){
                 Storage::delete(asset($propriete->image));//On le supprime alors
             }
             //Nous enregistrerons nos fichiers dans /uploads/images dans public
-            $folder = '/uploads/images/';
+            $folder = '/public/uploads/images/';
             $image_name = Str::slug($request->input('name')).'_'.time();
             $save_image = $folder.$image_name.'.'.$image->getClientOriginalExtension();
             //Maintenant nous pouvons enregistrer l'image dans le dossier en utilisant la méthode uploadImage();
@@ -141,19 +143,29 @@ public function destroy($id)
    return redirect('/propriete');
 
 }
-public function recherche(){
-        $perso = \App\Proprietes::orderBy('created_at', 'ASC')->get();
-        return view('propriete.affiche', compact('perso'));
+////methode recherche
 
+public function shouldBeSearchable()
+{
+
+    // Will respect "shouldBeSearchable"...
+App\Proprietes::where('type_anonce', '=', 'A_vendre')->searchable();
+$orders = App\Proprietes::search('Star Trek')->where('user_id', 1)->get();
+$user->orders()->searchable();
+
+$order->save();
+
+// Will override "shouldBeSearchable"...
+$orders->searchable();
+
+$proprietes->searchable();
+    return $this->isPublished();
 }
 
+//
+public function search (){
 
- public function deconnect(){
-    Auth::logout();
-    return view("home");
-   }
-
-
+}
    public function show($id){
     $propriete = Proprietes::find($id);
     return view("propriete.show", compact('propriete'));

@@ -11,8 +11,10 @@
 </head>
 <body>
     
-<div class="container">
-@if(session('success'))
+
+
+       <div class="container">
+       @if(session('success'))
    <div class="alert alert-success">{{session('success')}}</div>
 @endif
 @if($errors->any())
@@ -20,7 +22,6 @@
        <div class="alert alert-danger">{{$error}}</div>
    @endforeach
 @endif
-       <div class="container">
        <h6>Bienvenu chez monanonce.com</h6>
     <h5>Ici vous allez remplire les champs en donnant des renseignement  sur votre anonce.</h5>
        <form action="{{route('ajouter_propriete')}}" method="post" enctype="multipart/form-data">
@@ -82,15 +83,17 @@
                <label for="">Description</label>
                <textarea name="description" id="" cols="30" rows="10"></textarea>
                </div> <br><br>
-               <div class="col-md-4 mb-3"><input type="file" name="image"  class="form-control">
+               <div class="col-md-4 mb-3">
+               <input type="file" name="image"  class="form-control">
+
                <label for="">Ajouter une photo</label>
                <img src="/images/c.png" width="5%" alt="">
                </div>
                <div>
                    <button class="btn btn-success">Enregistrer</button>
-               </div>    
-               @if(session('success'))
-   <div class="alert alert-success">{{session('success')}}</div>
-@endif          
+                </div>
+                   @if(session('success'))
+                   <div class="alert alert-success">{{session('success')}}</div>
+                 @endif        
 </div>
            

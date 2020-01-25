@@ -42,9 +42,63 @@
         <span class="sr-only">Next</span>
       </a>
     </div>
-  </header>
+  </header> <br>
+
+  <div class="input-group mb-3">
+  <div class="input-group-prepend">
+    <label class="input-group-text" for="inputGroupSelect01">Categorie</label>
+  </div>
+  <select class="custom-select" id="inputGroupSelect01">
+    <option selected>Choose...</option>
+    <option value="1">Maison</option>
+    <option value="2">Immeuble</option>
+    <option value="3">Appartement</option>
+    <option value="4">Chambre</option>
+    <option value="5">Studio</option>
+    <option value="6">Centre commerciale</option>
+    <option value="7">Magasin</option>
+  </select>
+</div>
+
+<div class="input-group mb-3">
+  <select class="custom-select" id="inputGroupSelect02">
+    <option selected>Choose...</option>
+    <option value="1">A louer</option>
+    <option value="2">A vendre</option>
+  </select>
+  <div class="input-group-append">
+    <label class="input-group-text" for="inputGroupSelect03">type_anonce</label>
+  </div>
+</div>
 
 
+
+<div class="input-group">
+  <select class="custom-select" id="inputGroupSelect04" aria-label="Example select with button addon">
+    <option selected>localisation</option>
+    <option value="1">Dakar</option>
+    <option value="2">Tambacounda</option>
+    <option value="3">Saint-louis</option>
+    <option value="2">Kaolack</option>
+    <option value="3">Thies</option>
+    <option value="2">Kolda</option>
+    <option value="3">Kedougou</option>
+    <option value="2">Ziguinchor</option>
+    <option value="3">Matam</option>
+    <option value="2">Sediou</option>
+    <option value="3">Kaffrine</option>
+    <option value="2">Louga</option>
+    <option value="3">Fatik</option>
+    <option value="2">Dourbel</option>
+    <option value="3">Touba</option>
+    <option value="2">Sabodala</option>
+    <option value="3">Tivawone</option>
+
+  </select>
+  <div class="input-group-append">
+    <button class="btn btn-outline-success" type="button">recherche</button>
+  </div>
+</div>
 <!-- Page Content -->
 
 <div class="container">
@@ -58,9 +112,10 @@
 
 <div class="row">
 @foreach($propriete as $proprietes)
+@csrf
   <div class="col-lg-3 col-sm-3 col-md-3 col-xs-12 portfolio-item ">
     <div class="card h-100">
-    <a href="#"><img class="card-img-top" style="height:200px;" src="{{$proprietes->image ? asset($proprietes->image): asset('uploads/images/default.png')}}" height="250" width="250" alt="{{$proprietes->type_anonce}}"></a><div class="card-body"> 
+    <a href="#"><img class="card-img-top" style="height:200px;" src="{{$proprietes->image ? asset($proprietes->image): asset('/public/uploads/images/')}}" height="250" width="250" alt=""></a><div class="card-body"> 
         <h4 class="card-title">
         <a href="/propriete/{{$proprietes->id}}/show">{{$proprietes->localisation}}<br>{{$proprietes->prix_max}}FCFA</a>
         </h4>

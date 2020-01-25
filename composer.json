@@ -58,6 +58,11 @@
         ],
         "post-create-project-cmd": [
             "@php artisan key:generate --ansi"
-        ]
+        ],
+        "post-install-cmd": [
+            "ln -sr storage/app/public public/storage",
+            "ln -sr stockage / application / public public / stockage"
+        ],
+        
     }
 }

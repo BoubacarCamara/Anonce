@@ -4,8 +4,8 @@
 
    <div class="container mt-5" style="width: 60vw">
        <div class="row align-items-start my-5">
-           <div class="col-lg-5">
-               <p><img class="img-fluid rounded mb-4 mb-lg-0" src="{{$propriete->image ?? asset('uploads/images/')}}" alt=""></p>
+           <div class="col-lg-5">  
+               <p><img class="img-fluid rounded mb-4 mb-lg-0" src="{{$propriete->image ?? asset('/public/uploads/images/')}}" alt=""></p>
                <h3 class="font-weight-light">{{$propriete->localisation}}</h3><br>
                <label for="">Prix</label>
                <p>{{$propriete->prix_min.'FCFA' ?? ''}}</p><br>

@@ -9,7 +9,7 @@ use Illuminate\Support\Str;
 
 
 
-//use Illuminate\Http\Request;
+
 use Illuminate\Support\Facades\Storage;
 
 class ProprieteController extends Controller
@@ -81,6 +81,7 @@ public function create()
 public function uploadImage(UploadedFile $uploadedFile, $folder = null, $disk = 'public', $filename = null){
     $name = !is_null($filename) ? $filename : str_random('25');
     $file = $uploadedFile->storeAs($folder, $name.'.'.$uploadedFile->getClientOriginalExtension(), $disk);
+    
     return $file;
  }
  
@@ -106,6 +107,7 @@ public function update(Request $request, $id){
         if($request->has('image')){
             //On enregistre l'image dans une variable
             $image = $request->file('image');
+
             if(file_exists(public_path().$propriete->image)){//On verifie si le fichier existe
                 Storage::delete(asset($propriete->image));//On le supprime alors
             }

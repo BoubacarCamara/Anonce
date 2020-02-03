@@ -28,9 +28,10 @@ class ProprieteController extends Controller
 public function create()
 {
     $Type_de_propriete = \App\Type_de_propriete::pluck('nom','id');
+    $anonce = \App\Type_anonce::pluck('type','id');
     $user = \App\User::pluck('email','id');
 
-   return view('propriete.create',compact('Type_de_propriete','user'));
+   return view('propriete.create',compact('Type_de_propriete','user','anonce'));
 }
     public function store(Request $request)
 {
@@ -43,7 +44,7 @@ public function create()
       ,'nombre_chambre_max'=>'max:30',
       'salle_de_bain'=>'max:20',
       'superficie'=>'max:2000',
-      'type_anonce'=>'max:20',
+      'Type_anonce_id'=>'max:20',
       'description'=>'max:20000',
       'Type_de_proprietes_id'=>'max:200',
       'users_id'=>'max:50',
@@ -70,7 +71,7 @@ public function create()
    $propriete->salle_de_bain = $request->input('salle_de_bain');
    $propriete->superficie = $request->input('superficie');
    $propriete->description = $request->input('description');
-   $propriete->type_anonce = $request->input('type_anonce');
+   $propriete->Type_anonce_id = $request->input('Type_anonces_id');
    $propriete->Type_de_proprietes_id = $request->input('Type_de_proprietes_id');
    //$propriete->image = $request->input('image');
    $propriete->users_id= $request->input('users_id');
@@ -94,7 +95,8 @@ public function edit($id)
         $propriete = \App\Proprietes::find($id);
         $user = \App\User::pluck('id');
         $Type_de_propriete = \App\Type_de_propriete::pluck('nom','id');
-        return view('propriete.edit', compact('propriete','Type_de_propriete','user'));
+        $anonce = \App\Type_anonce::pluck('type','id');
+        return view('propriete.edit', compact('propriete','Type_de_propriete','user','anonce'));
      }
      
 }
@@ -128,7 +130,7 @@ public function update(Request $request, $id){
             "salle_de_bain" => $request->input('salle_de_bain'),
             "superficie" => $request->input('superficie'),
             "description" => $request->input('description'),
-            "type_anonce" => $request->input('type_anonce'),
+            "Type_anonce_id" => $request->input('Type_anonce_id'),
             //"users_id" => $request->input('users_id'),
             "Type_de_proprietes_id" => $request->input('Type_de_proprietes_id'),
         ]);
@@ -145,34 +147,43 @@ public function destroy($id)
    return redirect('/propriete');
 
 }
-////methode recherche
-
-public function shouldBeSearchable()
-{
-
-    // Will respect "shouldBeSearchable"...
-App\Proprietes::where('type_anonce', '=', 'A_vendre')->searchable();
-$orders = App\Proprietes::search('Star Trek')->where('user_id', 1)->get();
-$user->orders()->searchable();
-
-$order->save();
-
-// Will override "shouldBeSearchable"...
-$orders->searchable();
-
-$proprietes->searchable();
-    return $this->isPublished();
-}
 
 //
 public function search (){
+    $propriete = App\Proprietes::search('Star Trek')->get();
+   return view('propriete.recherche', compact('propriete'));
 
 }
+///methode show
+
    public function show($id){
     $propriete = Proprietes::find($id);
     return view("propriete.show", compact('propriete'));
  }
  
+ public function recherche(Request $request){
+     $id=$request->input('Type_de_proprietes_id');
+     $id3=$request->input('Type_de_proprietes_id');
+     $id1=$request->input('Type_anonce_id');
+     $id4=$request->input('Type_anonce_id');
+     $id2=$request->input('localisation');
+
+     $propriete = Proprietes::where('Type_de_proprietes_id', '=',$id)
+     ->where('Type_anonce_id', '=',$id1)->get();
+     $propriete = Proprietes::where('Type_de_proprietes_id', '=',$id3)->get();
+     $propriete = Proprietes::where('Type_anonce_id', '=',$id4)->get();
+     //$propriete = Proprietes::where('id','=',$id2)->get();
+          
+
+ 
+     
+    
+//dd($propriete);
+    //  $propriete = Proprietes::and('type_anonce', "=",'type_propriete')->get();
+     //$articles = Articles::orderBy('date', 'desc')->get();
+     return view('propriete.pro_show', compact('propriete'));
+
+ }
 }//fin de la classe
 
 

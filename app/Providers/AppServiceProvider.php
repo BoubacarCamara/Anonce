@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Providers;
 use Illuminate\Support\Facades\Schema;
 use App\User;
@@ -22,7 +21,6 @@ class AppServiceProvider extends ServiceProvider
         Gate::define('moderator', function(User $user){
             return $user->isModerator();
         });
-     
     }
 
     /**

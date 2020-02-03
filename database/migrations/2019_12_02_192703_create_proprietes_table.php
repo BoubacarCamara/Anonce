@@ -23,9 +23,9 @@ class CreateProprietesTable extends Migration
             $table->integer('nombre_chambre_max')->nullable();
             $table->integer('salle_de_bain')->nullable();
             $table->string('superficie');
-            $table->string('type_anonce');
             $table->string('description');
             $table->unsignedInteger('users_id');
+            $table->unsignedInteger('Type_anonce_id');
             $table->unsignedInteger('Type_de_proprietes_id');
             $table->timestamps();
         });

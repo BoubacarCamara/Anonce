@@ -29,7 +29,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/register';
+    protected $redirectTo = '/home';
 
     /**
      * Create a new controller instance.
@@ -76,9 +76,9 @@ class RegisterController extends Controller
             'password' => Hash::make($data['password']),
         ]);
     }
-    public function affiche(array $data){
+    // public function affiche(array $data){
         
-        $perso = \App\User::orderBy('created_at', 'ASC')->get();
-        return view('users.affiche', compact('perso'));
-     }
+    //     $perso = \App\User::orderBy('created_at', 'ASC')->get();
+    //     return view('users.affiche', compact('perso'));
+    //  }
 }

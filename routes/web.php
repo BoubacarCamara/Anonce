@@ -10,15 +10,22 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+// Route::group([], function () { 
+// Route::get ('proprietes', function(){
+//     $propriete = \App\Proprietes::get();
 
-// Route::get('/', function () {
-//     return view('welcome');
+//     //dd($propriete);
+//    // return view('propriete/recherche' , compact('propriete'));
+// });
+// Route::get('proprietes/{id}', function ($id){
     
+//     $propriete1 = \App\Proprietes::find($id);
+//     //dd($propriete1);
+//     //return view('propriete/pro_show', compact('propriete1')); 
+     
 // });
-//recherche 
-// Route::get('/search', function (Request $request) {
-//     return App\Proprietes::search($request->search)->get();
-// });
+   
+// });  
 //
 Route::get("home","HomeController@index");
 Route::get("anonce","HomeController@index");
@@ -47,9 +54,10 @@ Route::post('Demande/create','DemandeController@store')->name("ajouter_demande")
 
 //propriete
 Route::get("/propriete/{id}/show", 'ProprieteController@show');
+Route::post("/propriete/recherche",'ProprieteController@recherche')->name('recherche');
 
 Route::get('propriete','ProprieteController@affiche');
-Route::get('propriete','ProprieteController@recherche');
+
 Route::get('propriete/create','ProprieteController@create')->middleware('auth');
 
 Route::post('propriete/create','ProprieteController@store')->name("ajouter_propriete")->middleware('auth');
@@ -59,16 +67,28 @@ Route::patch('propriete/{id}/edit', 'ProprieteController@update')->name('update_
 Route::delete('propriete/{id}', 'ProprieteController@destroy');
 Route::resource('propriete', 'ProprieteController');
 //alerte
-Route::get('alerte','alerteController@affiche');
-Route::get('alerte/create','alerteController@create');
+// Route::get('alerte','alerteController@affiche');
+// Route::get('alerte/create','alerteController@create');
 
-Route::post('alerte/create','alerteController@store')->name("ajouter_alert");
+// Route::post('alerte/create','alerteController@store')->name("ajouter_alert");
 
-Route::GET('alerte/{id}/edit', 'alerteController@edit')->name('edit_alert');
-Route::patch('alerte/{id}/edit', 'alerteController@update')->name('update_alert');
-Route::delete('alerte/{id}', 'alerteController@destroy');
-Route::resource('alerte', 'alerteController');
+// Route::GET('alerte/{id}/edit', 'alerteController@edit')->name('edit_alert');
+// Route::patch('alerte/{id}/edit', 'alerteController@update')->name('update_alert');
+// Route::delete('alerte/{id}', 'alerteController@destroy');
+// Route::resource('alerte', 'alerteController');
 
+//type anonce
+Route::get('/type','Type_anonceController@affiche');
+Route::get('type/create','Type_anonceController@create');
+Route::post('type/create','Type_anonceController@store')->name("ajouter_anonce_type");
+
+
+Route::get('type/{id}/edit','Type_anonceController@edit')->name("editer_anonce_type");
+
+Route::patch('type/{id}/edit', 'Type_anonceController@update')->name('update_type_anonce');
+
+Route::delete('type/{id}', 'Type_anonceController@destroy')->middleware('auth');
+Route::resource('type', 'Type_anonceController');
 
 //type_propriete
 
@@ -99,6 +119,7 @@ Route::get('/home', 'ProprieteController@deconnect')->name('deconnexion');
 // Route::get('/home', 'HomeController@index')->name('home');
 Auth::routes(['verify'=>true]);
 Route::get('/', 'HomeController@index')->name('home');
+//Route::get('/welcome', 'HomeController@index')->name('welcome');
 
 //Auth::routes();
 

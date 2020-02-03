@@ -16,7 +16,7 @@
    <table class="table">
   <thead class="thead-dark">
   <tr>
-    <th scope="col">id</th>
+    <!-- <th scope="col">id</th> -->
       <th scope="col">localisation</th>
       <th scope="col">Prixmin</th>
       <th scope="col">prixmax</th>
@@ -25,7 +25,9 @@
       <th scope="col">salle_bain</th>
       <th scope="col">superficie</th>
       <th scope="col">type_anonce</th>
-      <th scope="col">type_propriete</th>
+      <th scope="col">Cathegorie</th>
+      <th scope="col">Description</th>
+      <!-- <th scope="col">type_propriete</th> -->
       <th scope="col">photo</th>
       <th scope="col">Modifier</th>
       <th scope="col">Supprimer</th>
@@ -34,7 +36,7 @@
   <tbody>
   @foreach($perso as $proprietes)
     <tr>
-                <td>{{$proprietes->id}}</td>             
+               <!-- /// <td>{{$proprietes->id}}</td>              -->
                 <td>{{$proprietes->localisation}}</td>
                <td>{{$proprietes->prix_min}}</td>
                <td>{{$proprietes->prix_max}}</td>
@@ -42,9 +44,10 @@
                <td>{{$proprietes->nombre_chambre_max}}</td>
                <td>{{$proprietes->salle_de_bain}}</td>
                <td>{{$proprietes->superficie}}</td>
-               <td>{{$proprietes->type_anonce}}</td>
+               <td>{{$proprietes->Type_anonce->type??''}}</td>
+               <td>{{$proprietes->Type_de_proprietes->nom??''}}</td>
                <td>{{$proprietes->description}}</td>
-               <td>{{$proprietes->Type_de_proprietes_id->nom ?? ''}}</td>
+               <!-- <td>{{$proprietes->Type_de_proprietes->nom ?? ''}}</td> -->
                <td><img src="{{$proprietes->image ? asset($proprietes->image) : asset('uploads/images/default.png')}}" alt="{{$proprietes->name}}" width="50"></td>
                <td><a href="{{route('edit_propriete',['id'=>$proprietes->id])}}" class="btn btn-primary" name="edit">editer</a></td>
        <td> <form action="propriete/{{$proprietes->id}}" method="post">

@@ -30,6 +30,13 @@
            <!-- Right Side Of Navbar -->
            <ul class="navbar-nav ml-auto">
                         <!-- Authentication Links -->
+                        <form action="get"></form>
+                        <li class="navbar-nav ml-auto">
+                        <select name="" id="" class="form-control" >
+                    <option value=""> <a href="#">Alouer</a> </option>
+                        <option value=""> <a href="#">A vendre</a></option>
+                </select>
+                        </li>
                         <li class="nav-item">
                           <a class="nav-link" href="/accueil">Accueil</a>
                         </li>
@@ -95,14 +102,14 @@
   @yield('contenu_de_la_page')
 
 
-  <footer class="py-5 bg-secondary">
+  <footer class="py-5 bg-secondary with=100% ">
     <div class="container">
     <div class="row text-white">
     <div col-md-6 col-sm-6>  
     <h5>Contact</h5>
     <p>
    
-    +221/78-365-24-56
+    +221 78-365-24-56
     <h5>Email</h5>
     boubacarpoulo6@gmail.com
     <h6>Adresse</h6>

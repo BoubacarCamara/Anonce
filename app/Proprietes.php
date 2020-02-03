@@ -9,7 +9,10 @@ class Proprietes extends Model
 {
     protected $guarded = [];
     public function Type_de_proprietes(){
-        return $this->belongsTo("App\Type_de_propriete");
+        return $this->belongsTo("App\Type_de_propriete",'Type_de_proprietes_id');
+    }
+    public function Type_anonce(){
+        return $this->belongsTo("App\Type_anonce",'Type_anonce_id');
     }
     public function users(){
         return $this->belongsTo("App\User");
@@ -30,9 +33,9 @@ class Proprietes extends Model
         });
      }
 ////recherche fonction 
-public function shouldBeSearchable()
-{
-    return $this->isPublished();
-}
+// public function shouldBeSearchable()
+// {
+//     return $this->isPublished();
+// }
      
 }

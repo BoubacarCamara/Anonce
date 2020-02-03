@@ -43,62 +43,47 @@
       </a>
     </div>
   </header> <br>
-
+  <div class="button-group flex-nowrap btn-btn-primary">
+  <div class="button-group-prepend">
+    <marquee behavior="" direction="left"><span class="button-group-text" id="addon-wrapping">Recherche une annonce</span></marquee>
+  </div>
+</div>
+  <form  method="POST" action="{{route('recherche')}}">
+  @csrf
   <div class="input-group mb-3">
+  
   <div class="input-group-prepend">
     <label class="input-group-text" for="inputGroupSelect01">Categorie</label>
   </div>
-  <select class="custom-select" id="inputGroupSelect01">
-    <option selected>Choose...</option>
-    <option value="1">Maison</option>
-    <option value="2">Immeuble</option>
-    <option value="3">Appartement</option>
-    <option value="4">Chambre</option>
-    <option value="5">Studio</option>
-    <option value="6">Centre commerciale</option>
-    <option value="7">Magasin</option>
-  </select>
+   <select name="Type_de_proprietes_id" id="Type_de_proprietes_id" class="form-control" >
+                    <option value="">type de proprietes</option>
+                    @foreach($type_de_propriete as $key => $value)
+                        <option value="{{$key}}">{{$value}}</option>
+                    @endforeach
+                </select>
 </div>
-
-<div class="input-group mb-3">
-  <select class="custom-select" id="inputGroupSelect02">
-    <option selected>Choose...</option>
-    <option value="1">A louer</option>
-    <option value="2">A vendre</option>
-  </select>
-  <div class="input-group-append">
-    <label class="input-group-text" for="inputGroupSelect03">type_anonce</label>
-  </div>
+<div>
+<select name="Type_anonce_id" id="Type_anonce_id" class="form-control" >
+                    <option value="">type anonce</option>
+                    @foreach($anonce as $key => $value)
+                        <option value="{{$key}}">{{$value}}</option>
+                    @endforeach
+                </select>
 </div>
-
-
-
 <div class="input-group">
-  <select class="custom-select" id="inputGroupSelect04" aria-label="Example select with button addon">
+  <select class="custom-select" name="localisation" id="localisation" aria-label="Example select with button addon">
     <option selected>localisation</option>
-    <option value="1">Dakar</option>
-    <option value="2">Tambacounda</option>
-    <option value="3">Saint-louis</option>
-    <option value="2">Kaolack</option>
-    <option value="3">Thies</option>
-    <option value="2">Kolda</option>
-    <option value="3">Kedougou</option>
-    <option value="2">Ziguinchor</option>
-    <option value="3">Matam</option>
-    <option value="2">Sediou</option>
-    <option value="3">Kaffrine</option>
-    <option value="2">Louga</option>
-    <option value="3">Fatik</option>
-    <option value="2">Dourbel</option>
-    <option value="3">Touba</option>
-    <option value="2">Sabodala</option>
-    <option value="3">Tivawone</option>
-
+    @foreach($loc as $key => $value)
+    <option value="{{$key}}">{{$value}}</option>
+    @endforeach
   </select>
+  
   <div class="input-group-append">
-    <button class="btn btn-outline-success" type="button">recherche</button>
+    <button class="btn btn-outline-success" type="submit">recherche</button>
   </div>
+  </form>
 </div>
+
 <!-- Page Content -->
 
 <div class="container">
@@ -111,43 +96,27 @@
 <h2></h2>
 
 <div class="row">
-@foreach($propriete as $proprietes)
+@foreach($propriete as $propriete)
 @csrf
   <div class="col-lg-3 col-sm-3 col-md-3 col-xs-12 portfolio-item ">
     <div class="card h-100">
-    <a href="#"><img class="card-img-top" style="height:200px;" src="{{$proprietes->image ? asset($proprietes->image): asset('/public/uploads/images/')}}" height="250" width="250" alt=""></a><div class="card-body"> 
+    <a href="#"><img class="card-img-top" style="height:200px;" src="{{$propriete->image ? asset($propriete->image): asset('/public/uploads/images/')}}" height="250" width="250" alt=""></a><div class="card-body"> 
+    <h4 class="card-title">
+               <a href="/propriete/{{$propriete->id}}/show">{{$propriete->Type_de_proprietes->nom}}</a>
+               
+           </h4>
         <h4 class="card-title">
-        <a href="/propriete/{{$proprietes->id}}/show">{{$proprietes->localisation}}<br>{{$proprietes->prix_max}}FCFA</a>
+        <a href="/propriete/{{$propriete->id}}/show">{{$propriete->localisation}}<br>{{$propriete->prix_max}}FCFA</a>
         </h4>
         <div class="card-body" style="height:60px;">
            <h4 class="card-title">
-               <a href="/propriete/{{$proprietes->id}}/show">{{$proprietes->type_anonce}}</a>
+               <a href="/propriete/{{$propriete->id}}/show">{{$propriete->Type_anonce->type}}</a>
                
            </h4>
-           <!-- <p class="card-text">{!! \Illuminate\Support\Str::words($proprietes->description, 25,'....')  !!}</p> -->
        </div>
         </div>
     </div>
   </div>
-<!--   
-    <nav aria-label="...">
-  <ul class="pagination">
-    <li class="page-item disabled">
-      <span class="page-link">Previous</span>
-    </li>
-    <li class="page-item"><a class="page-link" href="#">1</a></li>
-    <li class="page-item active" aria-current="page">
-      <span class="page-link">
-        2
-        <span class="sr-only">(current)</span>
-      </span>
-    </li>
-    <li class="page-item"><a class="page-link" href="#">3</a></li>
-    <li class="page-item">
-      <a class="page-link" href="#">Next</a>
-    </li>
-  </ul>
-</nav> -->
   @endforeach
     </div>
    

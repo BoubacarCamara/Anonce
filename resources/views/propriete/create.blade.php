@@ -64,16 +64,18 @@
                </div>
                <div class="row">
                <div class="col-md-4 mb-3">
-                   <input type="text" name="superficie" class="form-control" placeholder="superficie">
+                   <input type="text" name="superficie" class="form-control" placeholder="superficie en m">
                </div>
                <input type="hidden" value="1" name="users_id">
                <div>
                </div>
                <div class="col-md-4 mb-3">
-               <select name="type_anonce" id="type_anonce" class="form-control" >
-                    <option value="">type anonce</option>
-                        <option name="A_vendre">A vendre</option>
-                        <option name="A_louer">A louer</option>
+              
+               <select name="Type_anonces_id" id="Type_anonces_id" class="form-control" >
+                    <option value="">type de anonce</option>
+                    @foreach($anonce as $key => $value)
+                        <option value="{{$key}}">{{$value}}</option>
+                    @endforeach
                 </select>
                    <!-- <input type="text" name="type_anonce" class="form-control" placeholder="type d'anonce"> -->
                </div>

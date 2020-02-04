@@ -14,7 +14,7 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+        //$this->middleware('auth');
         //$this->middleware('verified');
     }
 
@@ -25,11 +25,11 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $propriete = Proprietes::all()->take(12);
+        $propriete = Proprietes::all()->take(7);
+        
         $type_de_propriete=Type_de_propriete::pluck('nom', 'id');
         $anonce = Type_anonce::pluck('type','id');
-        $loc = Proprietes::pluck('localisation','id');
-        return view('home',compact('propriete','type_de_propriete','loc','anonce'));
+        return view('home',compact('propriete','type_de_propriete','anonce'));
     }
 
    

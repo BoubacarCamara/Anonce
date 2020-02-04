@@ -70,13 +70,7 @@
                     @endforeach
                 </select>
 </div>
-<div class="input-group">
-  <select class="custom-select" name="localisation" id="localisation" aria-label="Example select with button addon">
-    <option selected>localisation</option>
-    @foreach($loc as $key => $value)
-    <option value="{{$key}}">{{$value}}</option>
-    @endforeach
-  </select>
+
   
   <div class="input-group-append">
     <button class="btn btn-outline-success" type="submit">recherche</button>

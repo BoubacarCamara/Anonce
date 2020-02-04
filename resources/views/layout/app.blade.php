@@ -30,12 +30,7 @@
            <!-- Right Side Of Navbar -->
            <ul class="navbar-nav ml-auto">
                         <!-- Authentication Links -->
-                        <form action="get"></form>
-                        <li class="navbar-nav ml-auto">
-                        <select name="" id="" class="form-control" >
-                    <option value=""> <a href="#">Alouer</a> </option>
-                        <option value=""> <a href="#">A vendre</a></option>
-                </select>
+                       
                         </li>
                         <li class="nav-item">
                           <a class="nav-link" href="/accueil">Accueil</a>

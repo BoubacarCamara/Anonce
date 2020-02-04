@@ -1,33 +1,5 @@
 @extends('layout.app')
 @section("contenu_de_la_page")
-
-<!-- Button trigger modal -->
-<!-- <button type="button" display=center class="btn btn-indigo" data-toggle="modal" data-target="#exampleModalScrollable">
-  contrat de publication
-</button> -->
-<!-- Modal -->
-<!-- <div class="modal fade" id="exampleModalScrollable" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-scrollable" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalScrollableTitle">Modal title</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div>
-  </div>
-</div> -->
-<!-- <form> -->
-  
-
 <div class="row">
 
 <div class="col-sm-4 col-md-4 col-lg-4  text-center color:black margin-top:15;"> 
@@ -117,7 +89,32 @@ Les visiteurs pourrons vous joindre a partir de vos information personnel.
     </div>
   </div>
 </div>
+
+<form>
+<div class="row">
+  <div class="form-group col-md-3">
+  
+    <label for="exampleInputEmail1">Addresse Email</label>
+    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+  </div>
+  <div class="form-group col-md-3">
+    <label for="exampleInputPassword1">Mot de passe</label>
+    <input type="password" class="form-control" id="exampleInputPassword1">
+  </div>
+  <div class="form-group col-md-3">
+    <label for="exampleFormControlTextarea1">Votre message</label>
+    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+  </div>
+  <!-- <div class="form-group form-check">
+    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+  </div> -->
+  </div>
+  <button type="submit" class="btn btn-primary">Envoyer</button>
+
 </form>
+
+<!-- </form>
            <button type="button" class="btn btn-outline-primary">Servive</button>
 <button type="button" class="btn btn-outline-secondary">Vehicule</button>
 <button type="button" class="btn btn-outline-success">Recrutement</button>
@@ -126,5 +123,5 @@ Les visiteurs pourrons vous joindre a partir de vos information personnel.
 <button type="button" class="btn btn-outline-info">Information</button>
 <button type="button" class="btn btn-outline-dark">Restaurant</button>
 </body>
-</html>
+</html> -->
 @endsection

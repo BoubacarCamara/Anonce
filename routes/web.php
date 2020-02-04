@@ -10,23 +10,7 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-// Route::group([], function () { 
-// Route::get ('proprietes', function(){
-//     $propriete = \App\Proprietes::get();
 
-//     //dd($propriete);
-//    // return view('propriete/recherche' , compact('propriete'));
-// });
-// Route::get('proprietes/{id}', function ($id){
-    
-//     $propriete1 = \App\Proprietes::find($id);
-//     //dd($propriete1);
-//     //return view('propriete/pro_show', compact('propriete1')); 
-     
-// });
-   
-// });  
-//
 Route::get("home","HomeController@index");
 Route::get("anonce","HomeController@index");
 // Route::get("users","RegisterController@affiche");
@@ -38,19 +22,7 @@ Route::get('/Demande','DemandeController@index');
 Route::get('Demande/create','DemandeController@create');
 Route::post('Demande/create','DemandeController@store')->name("ajouter_demande");
 
-//personne
-// Route::get("/personne/{id}/show", 'PersonneController@show');
-// Route::get('/personne','PersonneController@affiche');
-// Route::get('personne/create','PersonneController@create');
-// Route::post('personne/create','PersonneController@store')->name("ajouter_propriete");
 
-
-// Route::get('personne/{id}/edit','PersonneController@edit')->name("editer_personne");
-
-// Route::patch('personne/{id}/edit', 'PersonneController@update')->name('update_personne');
-
-// Route::delete('personne/{id}', 'PersonneController@destroy');
-// Route::resource('personne', 'PersonneController');
 
 //propriete
 Route::get("/propriete/{id}/show", 'ProprieteController@show');
@@ -66,16 +38,7 @@ Route::GET('propriete/{id}/edit', 'ProprieteController@edit')->name('edit_propri
 Route::patch('propriete/{id}/edit', 'ProprieteController@update')->name('update_propriete');
 Route::delete('propriete/{id}', 'ProprieteController@destroy');
 Route::resource('propriete', 'ProprieteController');
-//alerte
-// Route::get('alerte','alerteController@affiche');
-// Route::get('alerte/create','alerteController@create');
 
-// Route::post('alerte/create','alerteController@store')->name("ajouter_alert");
-
-// Route::GET('alerte/{id}/edit', 'alerteController@edit')->name('edit_alert');
-// Route::patch('alerte/{id}/edit', 'alerteController@update')->name('update_alert');
-// Route::delete('alerte/{id}', 'alerteController@destroy');
-// Route::resource('alerte', 'alerteController');
 
 //type anonce
 Route::get('/type','Type_anonceController@affiche');
@@ -107,16 +70,20 @@ Route::get("/propriete/{slug}/show", 'ProprieteController@show');// Auth::routes
 
 
 //mail
-Route::get('/abonnement/expired', "AbonnementController@expired");
-Route::get('/welcome', 'HomeController@index')->name('welcome');
-Route::get('/home', 'ProprieteController@deconnect')->name('deconnexion');
 
-///admin
-// Route::get('admin.login', 'Admin\LoginController@showLoginForm')->name('login_admin');
-// Route::post('admin.login', 'Admin\LoginController@login')->name('login_admin');
-// Route::post('admin.logout', 'Admin\LoginController@logout')->name('logout_admin');
+Route::get('/test-contact', function () {
+  return new App\Mail\Contact([
+    'nom' => 'Durand',
+    'email' => 'durand@chezlui.com',
+    'message' => 'Je voulais vous dire que votre site est magnifique !'
+    ]);
+});
+Route::POST('emails/contact', 'ContactController@store');
+Route::GET('emails/create', 'ContactController@create');
 
-// Route::get('/home', 'HomeController@index')->name('home');
+//Route::get('/welcome', 'HomeController@index')->name('welcome');
+
+
 Auth::routes(['verify'=>true]);
 Route::get('/', 'HomeController@index')->name('home');
 //Route::get('/welcome', 'HomeController@index')->name('welcome');

@@ -23,7 +23,7 @@
   @foreach($anonce as $type_anonces)
     <tr>
                 <td>{{$type_anonces->id}}</td>             
-                <td>{{$type_anonces->type}}</td>
+                <td>{{$type_anonces->typ}}</td>
         <td><a href="{{route('editer_anonce_type',['id'=>$type_anonces->id])}}" class="btn btn-primary" name="edit">editer</a></td>
        <td> <form action="type/{{$type_anonces->id}}" method="post">
                @csrf

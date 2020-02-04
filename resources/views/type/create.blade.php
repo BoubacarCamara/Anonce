@@ -30,7 +30,7 @@
                
                <div class="col-md-4 mb-3">
                
-              <input type="text" name="type">
+              <input type="text" name="typ">
                <div>
                    <button class="btn btn-success">Enregistrer</button>
                 </div>

@@ -20,7 +20,7 @@
     </tr>
   </thead>
   <tbody>
-  @foreach($type as $type_de_proprietes)
+  @foreach($typ as $type_de_proprietes)
     <tr>
                 <td>{{$type_de_proprietes->id}}</td>             
                 <td>{{$type_de_proprietes->nom}}</td>

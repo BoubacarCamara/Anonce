@@ -27,10 +27,10 @@ class Type_anonceController extends Controller
   {
      
      $data = $request->validate([
-        'type'=>'required|min:5',
+        'typ'=>'required|min:5',
        ]);
      $anonce = new \App\Type_anonce();
-     $anonce->type = $request->input('type');
+     $anonce->typ = $request->input('typ');
      $anonce->save();
      return redirect('/type')->with(['success' => "P enregistré"]);
      
@@ -39,13 +39,13 @@ class Type_anonceController extends Controller
   public function edit($id)
   {
      //$this->authorize('admin');
-     $anonce = \App\Type_anonce::find($id);//on recupere la type
+     $anonce = \App\Type_anonce::find($id);//on recupere la typ
      return view('type.edit', compact('anonce'));
   }
   public function update(Request $request, $id){
      $anonce = \App\Type_anonce::find($id);
      if($anonce){
-         $anonce->type = $request->input('type');
+         $anonce->typ = $request->input('typ');
          $anonce->save();
      }
      return redirect('/');

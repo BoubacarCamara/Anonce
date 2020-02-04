@@ -28,7 +28,7 @@ class ProprieteController extends Controller
 public function create()
 {
     $Type_de_propriete = \App\Type_de_propriete::pluck('nom','id');
-    $anonce = \App\Type_anonce::pluck('type','id');
+    $anonce = \App\Type_anonce::pluck('typ','id');
     $user = \App\User::pluck('email','id');
 
    return view('propriete.create',compact('Type_de_propriete','user','anonce'));
@@ -95,7 +95,7 @@ public function edit($id)
         $propriete = \App\Proprietes::find($id);
         $user = \App\User::pluck('id');
         $Type_de_propriete = \App\Type_de_propriete::pluck('nom','id');
-        $anonce = \App\Type_anonce::pluck('type','id');
+        $anonce = \App\Type_anonce::pluck('typ','id');
         return view('propriete.edit', compact('propriete','Type_de_propriete','user','anonce'));
      }
      

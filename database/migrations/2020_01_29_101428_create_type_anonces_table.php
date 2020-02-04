@@ -15,7 +15,7 @@ class CreateTypeAnoncesTable extends Migration
     {
         Schema::create('type_anonces', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('type');
+            $table->string('typ');
             $table->timestamps();
         });
     }

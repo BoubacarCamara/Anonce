@@ -26,7 +26,6 @@ class HomeController extends Controller
     public function index()
     {
         $propriete = Proprietes::all()->take(7);
-        
         $type_de_propriete=Type_de_propriete::pluck('nom', 'id');
         $anonce = Type_anonce::pluck('typ','id');
         return view('home',compact('propriete','type_de_propriete','anonce'));

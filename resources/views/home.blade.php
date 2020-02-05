@@ -101,7 +101,7 @@
         </h4>
         <div class="card-body" style="height:60px;">
            <h4 class="card-title">
-            <a href="/propriete/{{$propriete->id}}/show">{{$propriete->Type_anonce->type}}</a>
+            <a href="/propriete/{{$propriete->id}}/show">{{$propriete->Type_anonce->typ}}</a>
                
            </h4>
        </div>

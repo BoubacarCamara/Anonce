@@ -78,23 +78,26 @@ Route::get("/propriete/{slug}/show", 'ProprieteController@show');// Auth::routes
 //     'message' => 'Je voulais vous dire que votre site est magnifique !'
 //     ]);
 // });
-Route::get('/', function () {
-  return view('/test-contact');
+Route::get('/mail', function () {
+  //return view('/test-contact');
     $to_name="Camara";
-    $to_email="bouba.camara.contact.gmail.com";
-    $data=array("name"=>"Peter Parker","body"=>"test amil");
+    $to_email="bouba.camara.contact@gmail.com";
+    $data=array("name"=>"Boubacar CAMARA","body"=>"Nous sommes entrainde tester votre envoie de mail");
     Mail::send('mail',$data,function($message) use ($to_name,$to_email){
       $message->to($to_email)
-      ->subject('Lara mail subject');
-    } );
-  echo "email bien recu"
+      ->subject('Monanonce.com');
+    });
+  echo "email bien recu";
 });
 //Route::get('/email', 'ContactController@contact');
 Route::get('email/create', 'ContactController@create');
 Route::POST('email/create', 'ContactController@store')->name('ajouter_message');
 
 
-//Route::get('/welcome', 'HomeController@index')->name('welcome');
+///
+Route::get('/sendemail', 'SendEmailController@index');
+Route::post('/sendemail/send', 'SendEmailController@send');
+//
 
 
 Auth::routes(['verify'=>true]);

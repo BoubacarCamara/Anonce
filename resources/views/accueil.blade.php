@@ -91,26 +91,12 @@ Les visiteurs pourrons vous joindre a partir de vos information personnel.
 </div>
 
 <form method="post" action="{{route('ajouter_message')}}">
-<div class="row">
-  <div class="form-group col-md-3">
+<p>
+<h3>Merci beaucoup</h3><h5>vous pouvez nous envoyer un message </h5>
+</p>
   
-    <label for="exampleInputEmail1">Addresse Email</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" name="email"aria-describedby="emailHelp">
   </div>
-  <!-- <div class="form-group col-md-3">
-    <label for="exampleInputPassword1">Mot de passe</label>
-    <input type="password" class="form-control" id="exampleInputPassword1">
-  </div> -->
-  <div class="form-group col-md-3">
-    <label for="exampleFormControlTextarea1">Votre message</label>
-    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-  </div>
-  <!-- <div class="form-group form-check">
-    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-    <label class="form-check-label" for="exampleCheck1">Check me out</label>
-  </div> -->
-  </div>
-  <button type="submit" class="btn btn-primary">Envoyer</button>
+  <button  class="btn btn-primary"><a href="/sendemail">Votre message</a></button>
 
 </form>
 

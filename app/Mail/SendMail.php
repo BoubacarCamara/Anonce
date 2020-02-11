@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Mail;
-
 use Illuminate\Bus\Queueable;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
@@ -28,7 +27,7 @@ class SendMail extends Mailable
      */
     public function build()
     {
-        return $this->from('boubacarpoulo6@gmail.com')->subject('New Customer Equiry')->view('dynamic_email_template')->with('data', $this->data);
+        return $this->from('boubacarpoulo6@gmail.com')->subject('Agent immoblier')->view('dynamic_email_template')->with('data', $this->data);
     }
 }
 

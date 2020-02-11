@@ -42,7 +42,7 @@
     <p>
       <abbr title="Hours">H</abbr>: Monday - Friday: 9:00 AM to 5:00 PM
     </p>
-  </div>
+  </div> -->
 </div>
 <!-- /.row -->
 
@@ -75,7 +75,7 @@
         <div class="controls">
           <label>Message:</label>
           <textarea rows="10" cols="100" class="form-control" id="message" required data-validation-required-message="Please enter your message" maxlength="999" style="resize:none"></textarea>
-        </div>
+        </div> 
       </div>
       <div id="success"></div>
       <!-- For success/fail messages -->
@@ -93,5 +93,5 @@
 <footer class="py-5 bg-dark">
 <div class="container">
   <p class="m-0 text-center text-white">Copyright &copy; Your Website 2019</p>
-</div>
-@endsection
+</div> -->
+@endsection -->

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -10,12 +10,16 @@
 <link rel="stylesheet" href="{{asset('css/style.css')}}">
 <link rel="stylesheet" href="{{asset('images/img')}}">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<link href="/your-path-to-fontawesome/css/all.css" rel="stylesheet">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
 </head>
 <body>
  <!-- Navigation -->
  <nav class="navbar fixed-top navbar-expand-lg navbar-dark  bg-secondary fixed-top">
     <div class="container">
-      <a class="navbar-brand" href="#">MonAnonce.com</a>
+      <a class="navbar-brand" href="/home">MonAnonce.com</a>
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -30,14 +34,15 @@
            <!-- Right Side Of Navbar -->
            <ul class="navbar-nav ml-auto">
                         <!-- Authentication Links -->
-                       
+                        
+                        <li class="nav-item">
+                          <a class="nav-link" href="/sendemail">Contact</a>
                         </li>
+                        
                         <li class="nav-item">
                           <a class="nav-link" href="/accueil">Accueil</a>
                         </li>
-                        <li class="nav-item">
-                          <a class="nav-link" href="/anonce">Anonce</a>
-                        </li>
+                       
                       
                         @guest
                       
@@ -101,27 +106,11 @@
     <div class="container">
     <div class="row text-white">
     <div col-md-6 col-sm-6>  
-    <h5>Contact</h5>
-    <p>
-   
-    +221 78-365-24-56
-    <h5>Email</h5>
-    boubacarpoulo6@gmail.com
-    <h6>Adresse</h6>
-    medina rue 43 x 36 
-    </p>
+    <i class="fab fa-instagram"></i>
     </div>
     &nbsp; &nbsp;&nbsp;
    <div col-md-6 col-sm-6 >
-   <h5>Qui  sommes nous?</h5>
-   <p>
-   Monanonnce.com est un site web 
-   pour les annonces 
-   immobiliers. 
-   <h5>A  qui appartient le site?</h5>
-   Développer par Boubacar CAMARA 
-   </p>
-   </div>
+   <i class="fab fa-facebook"></i>   </div>
       </div>
     <p class="m-0 text-center text-white">Tout droit réservé &copy; www.monanonce.com 2019</p>
 

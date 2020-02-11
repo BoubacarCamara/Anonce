@@ -91,7 +91,7 @@
 @csrf
   <div class="col-lg-3 col-sm-3 col-md-3 col-xs-12 portfolio-item ">
     <div class="card h-100">
-    <a href="#"><img class="card-img-top" style="height:200px;" src="{{$propriete->image ? asset($propriete->image): asset('/public/uploads/images/')}}" height="250" width="250" alt=""></a><div class="card-body"> 
+    <a href="#"><img class="card-img-top" style="height:200px;" src="{{$propriete->image ? asset($propriete->image): asset('/images/')}}" height="250" width="250" alt=""></a><div class="card-body"> 
     <h4 class="card-title">
                <a href="/propriete/{{$propriete->id}}/show">{{$propriete->Type_de_proprietes->nom}}</a>
                

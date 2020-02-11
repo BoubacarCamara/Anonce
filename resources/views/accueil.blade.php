@@ -90,15 +90,6 @@ Les visiteurs pourrons vous joindre a partir de vos information personnel.
   </div>
 </div>
 
-<form method="post" action="{{route('ajouter_message')}}">
-<p>
-<h3>Merci beaucoup</h3><h5>vous pouvez nous envoyer un message </h5>
-</p>
-  
-  </div>
-  <button  class="btn btn-primary"><a href="/sendemail">Votre message</a></button>
-
-</form>
 
 <!-- </form>
            <button type="button" class="btn btn-outline-primary">Servive</button>

@@ -2,12 +2,13 @@
 
 namespace App\Http\Controllers\Auth;
 use Illuminate\Support\Facades\Auth;
-
 use App\Http\Controllers\Controller;
+use App\Http\Controllers\Register;
 use App\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+
 
 class RegisterController extends Controller
 {
@@ -76,9 +77,5 @@ class RegisterController extends Controller
             'password' => Hash::make($data['password']),
         ]);
     }
-    // public function affiche(array $data){
-        
-    //     $perso = \App\User::orderBy('created_at', 'ASC')->get();
-    //     return view('users.affiche', compact('perso'));
-    //  }
+    
 }

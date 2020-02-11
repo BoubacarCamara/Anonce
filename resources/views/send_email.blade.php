@@ -1,4 +1,3 @@
-<!-- @extends('layout.app') -->
 
 <!DOCTYPE html>
 <html>
@@ -21,11 +20,12 @@
   </style>
  </head>
  <body>
+ <h1><a href="/home">Retour</a></h1>
   <br />
   <br />
   <br />
   <div class="container box">
-   <h3 align="center">Bienvenu</h3><br />
+   <h3 align="center">Bienvenu sur Monanonce</h3><br />
    @if (count($errors) > 0)
     <div class="alert alert-danger">
      <button type="button" class="close" data-dismiss="alert">×</button>
@@ -44,19 +44,19 @@
    @endif
    <form method="post" action="{{url('sendemail/send')}}">
     {{ csrf_field() }}
-    <div class="form-group">
+    <div >
      <label>Saisir votre nom</label>
      <input type="text" name="name" class="form-control" value="" />
     </div>
-    <div class="form-group">
+    <div >
      <label>Votre Email</label>
      <input type="text" name="email" class="form-control" value="" />
     </div>
-    <div class="form-group">
+    <div >
      <label>Votre Message</label>
      <textarea name="message" class="form-control"></textarea>
     </div>
-    <div class="form-group">
+    <div >
      <input type="submit" name="send" class="btn btn-info" value="envoyer" />
     </div>
    </form>

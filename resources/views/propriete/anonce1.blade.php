@@ -1,4 +1,4 @@
-<!-- @extends('layout.app')
+@extends('layout.app')
 <div>
 </div>
 <div>
@@ -44,10 +44,3 @@
        </tr>    
     @endforeach
 
-    </th>
-   </tr>
-     </tbody>
-</table>
-<img src="..." class="rounded float-left" alt="...">
-<img src="..." class="rounded float-right" alt="...">   
-</html> -->

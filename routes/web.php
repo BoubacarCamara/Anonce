@@ -27,6 +27,7 @@ Route::post('Demande/create','DemandeController@store')->name("ajouter_demande")
 //propriete
 Route::get("/propriete/{id}/show", 'ProprieteController@show');
 Route::post("/propriete/recherche",'ProprieteController@recherche')->name('recherche');
+Route::post("/propriete/anonce1",'ProprieteController@mesanonce');
 
 Route::get('propriete','ProprieteController@affiche');
 
@@ -78,27 +79,32 @@ Route::get("/propriete/{slug}/show", 'ProprieteController@show');// Auth::routes
 //     'message' => 'Je voulais vous dire que votre site est magnifique !'
 //     ]);
 // });
-Route::get('/mail', function () {
-  //return view('/test-contact');
-    $to_name="Camara";
-    $to_email="bouba.camara.contact@gmail.com";
-    $data=array("name"=>"Boubacar CAMARA","body"=>"Nous sommes entrainde tester votre envoie de mail");
-    Mail::send('mail',$data,function($message) use ($to_name,$to_email){
-      $message->to($to_email)
-      ->subject('Monanonce.com');
-    });
-  echo "email bien recu";
-});
+// Route::get('/mail', function () {
+//   //return view('/test-contact');
+//     $to_name="Camara";
+//     $to_email="bouba.camara.contact@gmail.com";
+//     $data=array("name"=>"Boubacar CAMARA","body"=>"Nous sommes entrainde tester votre envoie de mail");
+//     Mail::send('mail',$data,function($message) use ($to_name,$to_email){
+//       $message->to($to_email)
+//       ->subject('Monanonce.com');
+//     });
+//   echo "email bien recu";
+// });
 //Route::get('/email', 'ContactController@contact');
 Route::get('email/create', 'ContactController@create');
 Route::POST('email/create', 'ContactController@store')->name('ajouter_message');
 
 
-///
+///envoie de mail par un client 
 Route::get('/sendemail', 'SendEmailController@index');
 Route::post('/sendemail/send', 'SendEmailController@send');
 //
+//utilisateur
+Route::get('users/affiche', 'ProprieteController@afficheuser');
 
+Route::GET('users/{id}/edit', 'ProprieteController@edituser')->name('edit_users');
+Route::patch('users/{id}/edit', 'ProprieteController@update1')->name('update_users');
+Route::delete('users/{id}', 'ProprieteController@destroyuser')->middleware('auth');
 
 Auth::routes(['verify'=>true]);
 Route::get('/', 'HomeController@index')->name('home');

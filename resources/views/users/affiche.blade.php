@@ -20,20 +20,20 @@
       <th scope="col">Nom</th>
       <th scope="col">Prenom</th>
       <th scope="col">Status</th>
-      <th scope="col">Tlephone</th>
+      <th scope="col">Telephone</th>
       <th scope="col">Email</th>
       <th scope="col">Modifier</th>
       <th scope="col">Supprimer</th>
     </tr>
   </thead>
   <tbody>
-  @foreach($perso as $proprietes)
+  @foreach($utilisateur as $users)
     <tr>
                 <td>{{$users->id}}</td>             
                 <td>{{$users->name}}</td>
-               <td>{{$users>prenom}}</td>
-               <td>{{$users>status}}</td>
-               <td>{{$users>telephone}}</td>
+               <td>{{$users->prenom}}</td>
+               <td>{{$users->status}}</td>
+               <td>{{$users->telephone}}</td>
                <td>{{$users->email}}</td>
                <td><a href="{{route('edit_users',['id'=>$users->id])}}" class="btn btn-primary" name="edit">editer</a></td>
        <td> <form action="propriete/{{$users->id}}" method="post">

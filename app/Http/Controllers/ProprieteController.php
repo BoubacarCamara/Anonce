@@ -167,23 +167,72 @@ public function search (){
      $id1=$request->input('Type_anonce_id');
      $id4=$request->input('Type_anonce_id');
      $id2=$request->input('localisation');
+     
 
      $propriete = Proprietes::where('Type_de_proprietes_id', '=',$id)
      ->where('Type_anonce_id', '=',$id1)->get();
      $propriete = Proprietes::where('Type_de_proprietes_id', '=',$id3)->get();
      $propriete = Proprietes::where('Type_anonce_id', '=',$id4)->get();
-     //$propriete = Proprietes::where('id','=',$id2)->get();
-          
-
- 
-     
-    
-//dd($propriete);
-    //  $propriete = Proprietes::and('type_anonce', "=",'type_propriete')->get();
-     //$articles = Articles::orderBy('date', 'desc')->get();
+  
      return view('propriete.pro_show', compact('propriete'));
 
  }
+ public function mesanonce(Request $request){
+     $id=$request->users('users_id');
+     $idd=$request->proprietes('proprietes_id');
+$propriete = DB::table('users')
+->where('users.id', id)
+->join('proprietes.id ', 'proprietes.users_id', '=', 'users.id')
+->get();
+foreach ($propriete as $proprietes) {
+    return view('propriete.anonce', compact('propriete'));
+
+}
+ }
+
+ //////////////MES USERS
+ public function afficheuser(){
+       
+    $this->authorize('admin');
+    $utilisateur = \App\User::orderBy('created_at', 'ASC')->get();
+    return view('users.affiche', compact('utilisateur'));
+ }
+ public function edituser($id)
+{
+    $this->authorize('admin');
+    { 
+       
+        $utilisateur = \App\User::find($id);
+        //$utilisateur = \App\User::pluck('id');
+        return view('users.edituser', compact('utilisateur'));
+     }
+     
+}
+
+public function update1(Request $request, $id){
+    $this->authorize('admin');
+    $utilisateur = \App\User::find($id);
+    if($utilisateur){
+        $utilisateur->update([
+            "name" => $request->input('name'),
+            "prenom" => $request->input('prenom'),
+            "status" => $request->input('status'),
+            "telephone" => $request->input('telephone'),
+            "email" => $request->input('email'),
+        ]);     
+ }
+ return redirect('/users/affiche');
+}
+    
+public function destroyuser($id)
+{
+    $this->authorize('admin');
+   $utilisateur = \App\User::find($id);
+   if($utilisateur)
+       $utilisateur->delete();
+   return redirect('/users/affiche');
+
+}
 }//fin de la classe
 
 

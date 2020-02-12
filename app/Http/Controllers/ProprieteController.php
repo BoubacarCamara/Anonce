@@ -168,6 +168,9 @@ public function search (){
      $id4=$request->input('Type_anonce_id');
      $id2=$request->input('localisation');
      
+    
+
+
 
      $propriete = Proprietes::where('Type_de_proprietes_id', '=',$id)
      ->where('Type_anonce_id', '=',$id1)->get();
@@ -177,17 +180,12 @@ public function search (){
      return view('propriete.pro_show', compact('propriete'));
 
  }
- public function mesanonce(Request $request){
-     $id=$request->users('users_id');
-     $idd=$request->proprietes('proprietes_id');
-$propriete = DB::table('users')
-->where('users.id', id)
-->join('proprietes.id ', 'proprietes.users_id', '=', 'users.id')
-->get();
-foreach ($propriete as $proprietes) {
-    return view('propriete.anonce', compact('propriete'));
+ public function anonceuser(){
 
-}
+    $propriete1 = \App\Proprietes::where('users_id', '=' , Auth::user()->id)->get();
+   // dd($propriete);
+    return view('propriete.mesanonce', compact('propriete1'));
+  
  }
 
  //////////////MES USERS

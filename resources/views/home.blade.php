@@ -50,7 +50,24 @@
 </div>
   <form  method="POST" action="{{route('recherche')}}">
   @csrf
-  <div class="input-group mb-3">
+  @if (count($errors) > 0)
+    <div class="alert alert-danger">
+     <button type="button" class="close" data-dismiss="alert">×</button>
+     <ul>
+      @foreach ($errors->all() as $error)
+       <li>{{ $error }}</li>
+      @endforeach
+     </ul>
+    </div>
+   @endif
+   @if ($message = Session::get('success'))
+   <div class="alert alert-success alert-block">
+    <button type="button" class="close" data-dismiss="alert">×</button>
+           <strong>{{ $message }}</strong>
+   </div>
+   @endif
+   <div class="row">  
+  <div class="input-group mb-3 col-md-6">
   
   <div class="input-group-prepend">
     <label class="input-group-text" for="inputGroupSelect01">Categorie</label>
@@ -62,7 +79,7 @@
                     @endforeach
                 </select>
 </div>
-<div>
+<div class="input-group mb-3 col-md-6">
 <select name="Type_anonce_id" id="Type_anonce_id" class="form-control" >
                     <option value="">type anonce</option>
                     @foreach($anonce as $key => $value)
@@ -70,9 +87,8 @@
                     @endforeach
                 </select>
 </div>
-
-  
-  <div class="input-group-append">
+</div>
+<div class="input-group-append">
     <button class="btn btn-outline-success" type="submit">recherche</button>
   </div>
   </form>

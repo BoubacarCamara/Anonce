@@ -27,7 +27,7 @@ Route::post('Demande/create','DemandeController@store')->name("ajouter_demande")
 //propriete
 Route::get("/propriete/{id}/show", 'ProprieteController@show');
 Route::post("/propriete/recherche",'ProprieteController@recherche')->name('recherche');
-Route::post("/propriete/anonce1",'ProprieteController@mesanonce');
+Route::get("/propriete/mesanonce",'ProprieteController@anonceuser');
 
 Route::get('propriete','ProprieteController@affiche');
 

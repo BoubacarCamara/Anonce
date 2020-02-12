@@ -8,7 +8,7 @@
 
 </div>
 <div class="col-sm-4 col-md-4 col-lg-4 text-center margin-top:15;">
-<h3 style="border:1px solid black; padding-top:25px; color:red; margin-left:30px; width:150px; height:150px; border-radius:100%;"> <a href="#">Mes anonces</a> </h3>
+<h3 style="border:1px solid black; padding-top:25px; color:red; margin-left:30px; width:150px; height:150px; border-radius:100%;"> <a href="/propriete/mesanonce">Mes anonces</a> </h3>
 
 </div>
 <div class="col-sm-4 col-md-4 col-lg-4 text-center margin-top:15;">

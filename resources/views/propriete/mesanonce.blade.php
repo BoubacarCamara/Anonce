@@ -33,7 +33,7 @@
   <tbody>
  
   
-  @foreach($propriete as $proprietes)
+  @foreach($propriete1 as $proprietes)
   <ul>
  <li>
   <figure class="figure">
